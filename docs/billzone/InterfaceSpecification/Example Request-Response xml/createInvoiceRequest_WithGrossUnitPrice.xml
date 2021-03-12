@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://Billzone.Billgate.Invoicing.Messages" xmlns:ns2="http://Billzone.Billgate.Invoicing.DataModel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns3="http://Billzone.Billgate.Invoicing">
+  <SOAP-ENV:Body>
+    <ns3:CreateInvoice>
+      <ns3:request>
+        <ns1:RequestId>111</ns1:RequestId>
+        <ns1:SecurityToken>9ICOPE3QYHT4LS3JM1ECZRJF47NLGN3GSLJ2R2WE</ns1:SecurityToken>
+        <ns1:CreateInvoiceTransaction>
+          <ns2:TransactionId>asdfghjkl</ns2:TransactionId>
+          <ns2:Header xsi:type="ns2:InvoiceHeader">
+            <ns2:AccountBlockPrefix>BLA</ns2:AccountBlockPrefix>
+            <ns2:Bank xsi:type="ns2:DefaultBank">
+              <ns2:BankDescription xsi:nil="true" />
+            </ns2:Bank>
+            <ns2:IssuerAddress xsi:type="ns2:DefaultIssuerAddress" />
+            <ns2:Customer xsi:type="ns2:Customer">
+              <ns2:Name>Polisz Bt.</ns2:Name>
+              <ns2:CustomerIdentifier>12312123sdf</ns2:CustomerIdentifier>
+              <ns2:EUTaxNumber>HU33441234</ns2:EUTaxNumber>
+              <ns2:TaxNumber>12345678-1-12</ns2:TaxNumber>
+              <ns2:AddressPostalCode>1131</ns2:AddressPostalCode>
+              <ns2:AddressCity>Budapest</ns2:AddressCity>
+              <ns2:AddressCountryId>HU</ns2:AddressCountryId>
+              <ns2:AddressLine1>Teve utca 1</ns2:AddressLine1>
+              <ns2:AddressLine2>B épület, 12. em.</ns2:AddressLine2>
+              <ns2:AddressState>Budapest</ns2:AddressState>
+            </ns2:Customer>
+            <ns2:FulfillmentDate>2010-12-01</ns2:FulfillmentDate>
+            <ns2:PaymentDueDate>2010-12-01</ns2:PaymentDueDate>
+            <ns2:Currency xsi:type="ns2:CurrencyShortName">
+              <ns2:ShortName>HUF</ns2:ShortName>
+            </ns2:Currency>
+            <ns2:InterEUVatExempt>false</ns2:InterEUVatExempt>
+            <ns2:PaymentMethodId>2</ns2:PaymentMethodId>
+            <ns2:InvoiceDescription>Invoice description</ns2:InvoiceDescription>
+            <ns2:Notes>Notes</ns2:Notes>
+            <ns2:OrderNumber>ORD00012</ns2:OrderNumber>
+          </ns2:Header>
+          <ns2:Lines>
+            <ns2:InvoiceLineBase xsi:type="ns2:InvoiceLineIdentifier">
+              <ns2:Identifier>KUTYA-S</ns2:Identifier>
+              <ns2:Quantity>1</ns2:Quantity>
+            </ns2:InvoiceLineBase>
+            <ns2:InvoiceLineBase xsi:type="ns2:InvoiceLineIdentifier">
+              <ns2:Identifier>KUTYA-M</ns2:Identifier>
+              <ns2:Quantity>2</ns2:Quantity>
+            </ns2:InvoiceLineBase>
+            <ns2:InvoiceLineBase xsi:type="ns2:InvoiceLine2">
+              <ns2:ProductStatisticalCode xsi:nil="true" />
+              <ns2:ProductName>Teszt Termék</ns2:ProductName>
+              <ns2:NetUnitPrice xsi:nil="true" />
+              <ns2:Quantity>1</ns2:Quantity>
+              <ns2:VatTaxRateCode>AM</ns2:VatTaxRateCode>
+              <ns2:UnitIdentifier>DARAB</ns2:UnitIdentifier>
+              <ns2:ProductTextIdentifier>TESZTT</ns2:ProductTextIdentifier>
+              <ns2:InvoiceLineNote>Teszt megjegyzés</ns2:InvoiceLineNote>
+              <ns2:GrossUnitPrice>2000</ns2:GrossUnitPrice>
+              <ns2:FulfillmentBeginDate>2014-09-03T20:36:59.559922+02:00</ns2:FulfillmentBeginDate>
+              <ns2:FulfillmentEndDate>2014-09-43T20:36:59.559922+02:00</ns2:FulfillmentEndDate>
+            </ns2:InvoiceLineBase>
+          </ns2:Lines>
+          <ns2:SendInvoiceToCustomer>false</ns2:SendInvoiceToCustomer>
+          <ns2:SendInvoiceToEmailAddress xsi:nil="true" />
+          <ns2:InvoiceCourierTypeId xsi:nil="true" />
+        </ns1:CreateInvoiceTransaction>
+      </ns3:request>
+    </ns3:CreateInvoice>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

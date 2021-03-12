@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="Invoicing" 
+                  targetNamespace="http://Billzone.Billgate.Invoicing" 
+                  xmlns:tns="http://Billzone.Billgate.Invoicing" 
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" 
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+                  xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" 
+                  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" 
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" 
+                  xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" 
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+                  xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" 
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" 
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
+                  xmlns:wsa10="http://www.w3.org/2005/08/addressing" 
+                  xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Billzone.Billgate.Invoicing/Imports">
+      <xsd:import schemaLocation="Billzone.Billgate.Invoicing.Parameters.xsd" namespace="http://Billzone.Billgate.Invoicing"/>
+    </xsd:schema>
+  </wsdl:types>
+
+  <wsdl:message name="IInvoicing_CreateInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_CreateInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInvoiceResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IInvoicing_ConvertExternalInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertExternalInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_ConvertExternalInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertExternalInvoiceResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IInvoicing_DownloadInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_DownloadInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadInvoiceResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IInvoicing_DownloadInvoices_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadInvoices" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_DownloadInvoices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadInvoicesResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="IInvoicing_GetInvoiceData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceData" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_GetInvoiceData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDataResponse" />
+  </wsdl:message>
+  
+  <wsdl:portType name="IInvoicing">
+    <wsdl:operation name="CreateInvoice">
+      <wsdl:input wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/CreateInvoice" message="tns:IInvoicing_CreateInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/CreateInvoiceResponse" message="tns:IInvoicing_CreateInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertExternalInvoice">
+      <wsdl:input wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/ConvertExternalInvoice" message="tns:IInvoicing_ConvertExternalInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/ConvertExternalInvoiceResponse" message="tns:IInvoicing_ConvertExternalInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoice">
+      <wsdl:input wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoice" message="tns:IInvoicing_DownloadInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoiceResponse" message="tns:IInvoicing_DownloadInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoices">
+      <wsdl:input wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoices" message="tns:IInvoicing_DownloadInvoices_InputMessage" />
+      <wsdl:output wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoicesResponse" message="tns:IInvoicing_DownloadInvoices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceData">
+      <wsdl:input wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/GetInvoiceData" message="tns:IInvoicing_GetInvoiceData_InputMessage" />
+      <wsdl:output wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/GetInvoiceDataResponse" message="tns:IInvoicing_GetInvoiceData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  
+  <wsdl:binding name="BillgateServiceHttpEndpoint" type="tns:IInvoicing">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateInvoice">
+      <soap:operation soapAction="http://Billzone.Billgate.Invoicing/IInvoicing/CreateInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertExternalInvoice">
+      <soap:operation soapAction="http://Billzone.Billgate.Invoicing/IInvoicing/ConvertExternalInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoice">
+      <soap:operation soapAction="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoices">
+      <soap:operation soapAction="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceData">
+      <soap:operation soapAction="http://Billzone.Billgate.Invoicing/IInvoicing/GetInvoiceData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="Invoicing">
+    <wsdl:port name="BillgateServiceHttpEndpoint" binding="tns:BillgateServiceHttpEndpoint">
+      <soap:address location="https://www.billzone.eu/Service.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

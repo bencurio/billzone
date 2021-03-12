@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="billzone_account_invoice_send_alter" model="ir.ui.view">
+            <field name="name">account.invoice.send.billzone_account_invoice_send_alter</field>
+            <field name="model">account.invoice.send</field>
+            <field name="inherit_id" ref="account.account_invoice_send_wizard_form"/>
+            <field name="arch" type="xml">
+                <data>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

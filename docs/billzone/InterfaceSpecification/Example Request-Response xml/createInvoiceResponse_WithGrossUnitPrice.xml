@@ -1,0 +1,26 @@
+﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <ActivityId CorrelationId="55e0ad87-cb77-4bff-b3f8-a1f72b285ba8" xmlns="http://schemas.microsoft.com/2004/09/ServiceModel/Diagnostics">79397e13-5491-4f2e-8f82-d8f8ad660cb5</ActivityId>
+  </s:Header>
+  <s:Body>
+    <CreateInvoiceResponse xmlns="http://Billzone.Billgate.Invoicing">
+      <CreateInvoiceResult xmlns:a="http://Billzone.Billgate.Invoicing.Messages" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:RequestId>111</a:RequestId>
+        <a:RequestResult xmlns:b="http://Billzone.Billgate.Invoicing.DataModel">
+          <b:Code>61001</b:Code>
+          <b:IsTransient>false</b:IsTransient>
+        </a:RequestResult>
+        <a:TransactionResult xmlns:b="http://Billzone.Billgate.Invoicing.DataModel">
+          <b:TransactionId>asdfghjkl</b:TransactionId>
+          <b:ResultCode>
+            <b:Code>61001</b:Code>
+            <b:IsTransient>false</b:IsTransient>
+          </b:ResultCode>
+          <b:RepeatedTransaction>true</b:RepeatedTransaction>
+          <b:InvoiceNumber>BLF0004</b:InvoiceNumber>
+          <b:InvoiceCourierUrl i:nil="true" />
+        </a:TransactionResult>
+      </CreateInvoiceResult>
+    </CreateInvoiceResponse>
+  </s:Body>
+</s:Envelope>

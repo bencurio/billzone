@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified"
+           targetNamespace="http://Billzone.Billgate.Invoicing"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:messages="http://Billzone.Billgate.Invoicing.Messages"
+           xmlns:tns="http://Billzone.Billgate.Invoicing"
+           xmlns:data="http://Billzone.Billgate.Invoicing.DataModel">
+  <xs:import schemaLocation="Billzone.Billgate.Invoicing.Messages.xsd" namespace="http://Billzone.Billgate.Invoicing.Messages" />
+
+  <xs:element name="CreateInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:CreateInvoiceRequest" xmlns:q1="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="CreateInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateInvoiceResult" nillable="true" type="q2:CreateInvoiceResponse" xmlns:q2="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ConvertExternalInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:ConvertExternalInvoiceRequest" xmlns:q1="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ConvertExternalInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConvertExternalInvoiceResult" nillable="true" type="q2:ConvertExternalInvoiceResponse" xmlns:q2="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="RegisterExternalInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:RegisterExternalInvoiceRequest" xmlns:q1="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="RegisterExternalInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterExternalInvoiceResult" nillable="true" type="q2:RegisterExternalInvoiceResponse" xmlns:q2="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DownloadInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:DownloadInvoiceRequest" xmlns:q1="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DownloadInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadInvoiceResult" nillable="true" type="q2:DownloadInvoiceResponse" xmlns:q2="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DownloadInvoices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:DownloadInvoicesRequest" xmlns:q1="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DownloadInvoicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadInvoicesResult" nillable="true" type="q2:DownloadInvoicesResponse" xmlns:q2="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+ <xs:element name="GetInvoiceData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:GetInvoiceDataRequest" xmlns:q1="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GetInvoiceDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInvoiceDataResult" nillable="true" type="q2:GetInvoiceDataResponse" xmlns:q2="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CreateCashReceipt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:CreateCashReceiptRequest" xmlns:q1="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CreateCashReceiptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateCashReceiptResult" nillable="true" type="q2:CreateCashReceiptResponse" xmlns:q2="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DownloadCashReceipt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:DownloadCashReceiptRequest" xmlns:q1="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DownloadCashReceiptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadCashReceiptResult" nillable="true" type="q2:DownloadCashReceiptResponse" xmlns:q2="http://Billzone.Billgate.Invoicing.Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  
+</xs:schema>

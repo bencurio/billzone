@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="billzone_account_tax_settings" model="ir.ui.view">
+            <field name="name">account.tax.form.inherit_billzone_account_tax_settings</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                        <page name="billzone_settings" string="BillZone">
+                            <group name="billzone_settings">
+                                <field
+                                        name="BillzoneVatTaxRateCode"
+                                />
+                                <field
+                                        name="BillzoneVatTaxRateName"
+                                />
+                            </group>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+        <record id="billzone_account_tax_settings_tree" model="ir.ui.view">
+            <field name="name">account.tax.tree.inherit_billzone_account_tax_settings</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_tree"/>
+            <field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//tree[1]/field[@name='company_id']" position="before">
+                        <field name="BillzoneVatTaxRateCode" string="Billzone (ÁFA kód)" />
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

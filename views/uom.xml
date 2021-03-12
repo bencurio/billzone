@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="billzone_uom_uom" model="ir.ui.view">
+            <field name="name">uom.uom.form.inherit_billzone_uom_uom</field>
+            <field name="model">uom.uom</field>
+            <field name="inherit_id" ref="uom.product_uom_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//form[1]/group[1]/group[1]" position="inside">
+                        <field name="BillzoneEntityUnitIdentifier" />
+                    </xpath>
+                </data>
+            </field>
+        </record>
+        <record id="billzone_uom_uom_tree" model="ir.ui.view">
+            <field name="name">uom.uom.tree.inherit_billzone_uom_uom</field>
+            <field name="model">uom.uom</field>
+            <field name="inherit_id" ref="uom.product_uom_tree_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//tree[1]/field[@name='category_id']" position="after">
+                        <field name="BillzoneEntityUnitIdentifier" string="BillZone [Interfész (API) azon.]" />
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

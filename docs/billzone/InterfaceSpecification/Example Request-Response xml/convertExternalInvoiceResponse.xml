@@ -1,0 +1,25 @@
+﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <ActivityId CorrelationId="f395ff9d-da44-4274-bdbd-46371f0db681" xmlns="http://schemas.microsoft.com/2004/09/ServiceModel/Diagnostics">b57cbedd-2c2a-4b56-b1d7-8616dc52dba6</ActivityId>
+  </s:Header>
+  <s:Body>
+    <ConvertExternalInvoiceResponse xmlns="http://Billzone.Billgate.Invoicing">
+      <ConvertExternalInvoiceResult xmlns:a="http://Billzone.Billgate.Invoicing.Messages" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:RequestId>46666</a:RequestId>
+        <a:RequestResult xmlns:b="http://Billzone.Billgate.Invoicing.DataModel">
+          <b:Code>61001</b:Code>
+          <b:IsTransient>false</b:IsTransient>
+        </a:RequestResult>
+        <a:TransactionResult xmlns:b="http://Billzone.Billgate.Invoicing.DataModel">
+          <b:TransactionId>00000088</b:TransactionId>
+          <b:ResultCode>
+            <b:Code>61001</b:Code>
+            <b:IsTransient>false</b:IsTransient>
+          </b:ResultCode>
+          <b:RepeatedTransaction>false</b:RepeatedTransaction>
+          <b:InvoiceCourierUrl i:nil="true" />
+        </a:TransactionResult>
+      </ConvertExternalInvoiceResult>
+    </ConvertExternalInvoiceResponse>
+  </s:Body>
+</s:Envelope>

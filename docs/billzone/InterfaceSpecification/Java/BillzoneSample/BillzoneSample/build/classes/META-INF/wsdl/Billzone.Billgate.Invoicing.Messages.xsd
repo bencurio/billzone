@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified"
+           targetNamespace="http://Billzone.Billgate.Invoicing.Messages"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://Billzone.Billgate.Invoicing.Messages"
+           xmlns:data="http://Billzone.Billgate.Invoicing.DataModel">
+  <xs:import schemaLocation="Billzone.Billgate.Invoicing.DataModel.xsd" namespace="http://Billzone.Billgate.Invoicing.DataModel" />
+
+  <xs:complexType name="RequestBase">
+    <xs:annotation>
+      <xs:documentation>Request ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="RequestId" nillable="false" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Request azonosítója</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" name="SecurityToken" nillable="false" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Biztonsági azonosító</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestBase" nillable="true" type="tns:RequestBase" />
+
+  <xs:complexType name="CreateInvoiceRequest">
+    <xs:annotation>
+      <xs:documentation>Számla létrehozás kérés</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="CreateInvoiceTransaction" nillable="false" type="data:CreateInvoiceTransaction">
+            <xs:annotation>
+              <xs:documentation>A létrehozandó számla tranzakciója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateInvoiceRequest" nillable="false" type="tns:CreateInvoiceRequest"/>
+
+  <xs:complexType name="ConvertExternalInvoiceRequest">
+    <xs:annotation>
+      <xs:documentation>Számla aláírás kérés</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="ConvertExternalInvoiceTransaction" nillable="false" type="data:ConvertExternalInvoiceTransaction">
+            <xs:annotation>
+              <xs:documentation>Az aláírandó számla tranzakciója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConvertExternalInvoiceRequest" nillable="false" type="tns:ConvertExternalInvoiceRequest"/>
+
+  <xs:complexType name="DownloadInvoiceRequest">
+    <xs:annotation>
+      <xs:documentation>Számla letöltés kérés</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="DownloadInvoiceQuery" nillable="false" type="data:DownloadInvoiceQuery">
+            <xs:annotation>
+              <xs:documentation>Számla letöltés lekérdezés</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadInvoiceRequest" nillable="false" type="tns:DownloadInvoiceRequest"/>
+
+  <xs:complexType name="DownloadInvoicesRequest">
+    <xs:annotation>
+      <xs:documentation>Tömeges számla letöltés kérés</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="DownloadInvoicesQuery" nillable="false" type="data:DownloadInvoicesQuery">
+            <xs:annotation>
+              <xs:documentation>Tömeges számla letöltés lekérdezés</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadInvoicesRequest" nillable="false" type="tns:DownloadInvoicesRequest"/>
+  
+    <xs:complexType name="GetInvoiceDataRequest">
+    <xs:annotation>
+      <xs:documentation>Törzsadat lekérdezés kérés</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="GetInvoiceDataQuery" nillable="false" type="data:GetInvoiceDataQuery">
+            <xs:annotation>
+              <xs:documentation>Tömeges számla letöltés lekérdezés</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetInvoiceDataRequest" nillable="false" type="tns:GetInvoiceDataRequest"/>
+
+  <xs:complexType name="DownloadCashReceiptRequest">
+    <xs:annotation>
+      <xs:documentation>Bizonylat letöltés kérés</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="DownloadCashReceiptQuery" nillable="false" type="data:DownloadCashReceiptQuery">
+            <xs:annotation>
+              <xs:documentation>Bizonylat letöltés lekérdezés</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadCashReceiptRequest" nillable="false" type="tns:DownloadCashReceiptRequest"/>
+
+  <xs:complexType name="ResponseBase">
+    <xs:annotation>
+      <xs:documentation>Response ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="RequestId" nillable="false" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Request azonosítója</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" name="RequestResult" nillable="false" type="data:ResultCode">
+        <xs:annotation>
+          <xs:documentation>Kérés eredmény kódja</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+
+  <xs:complexType name="CreateInvoiceResponse">
+    <xs:annotation>
+      <xs:documentation>Számla létrehozás válasz</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TransactionResult" nillable="true" type="data:CreateInvoiceTransactionResult">
+            <xs:annotation>
+              <xs:documentation>A tranzakció eredménye</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateInvoiceResponse" nillable="false" type="tns:CreateInvoiceResponse"/>
+
+  <xs:complexType name="ConvertExternalInvoiceResponse">
+    <xs:annotation>
+      <xs:documentation>Számla aláírás válasz</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TransactionResult" nillable="true" type="data:ConvertExternalInvoiceTransactionResult">
+            <xs:annotation>
+              <xs:documentation>A tranzakció eredménye</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConvertExternalInvoiceResponse" nillable="false" type="tns:ConvertExternalInvoiceResponse"/>
+
+  <xs:complexType name="DownloadInvoiceResponse">
+    <xs:annotation>
+      <xs:documentation>Számla letöltés válasz</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QueryResult" nillable="true" type="data:DownloadInvoiceQueryResult">
+            <xs:annotation>
+              <xs:documentation>A lekérdezés eredménye</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadInvoiceResponse" nillable="false" type="tns:DownloadInvoiceResponse"/>
+
+  <xs:complexType name="DownloadInvoicesResponse">
+    <xs:annotation>
+      <xs:documentation>Tömeges számla letöltés válasz</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QueryResult" nillable="true" type="data:DownloadInvoicesQueryResult">
+            <xs:annotation>
+              <xs:documentation>A lekérdezés eredménye</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadInvoicesResponse" nillable="false" type="tns:DownloadInvoicesResponse"/>
+
+ <xs:complexType name="GetInvoiceDataResponse">
+    <xs:annotation>
+      <xs:documentation>Törzsadat lekérdezés válasz</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QueryResult" nillable="true" type="data:GetInvoiceDataQueryResult">
+            <xs:annotation>
+              <xs:documentation>A lekérdezés eredménye</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetInvoiceDataResponse" nillable="false" type="tns:GetInvoiceDataResponse"/>
+
+  <xs:complexType name="CreateCashReceiptRequest">
+    <xs:annotation>
+      <xs:documentation>Nyugta létrehozás kérés</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="CreateCashReceiptTransaction" nillable="false" type="data:CreateCashReceiptTransaction">
+            <xs:annotation>
+              <xs:documentation>A létrehozandó nyugta tranzakciója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateCashReceiptRequest" nillable="false" type="tns:CreateCashReceiptRequest"/>
+
+  <xs:complexType name="CreateCashReceiptResponse">
+    <xs:annotation>
+      <xs:documentation>Nyugta létrehozás válasz</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TransactionResult" nillable="true" type="data:CreateCashReceiptTransactionResult">
+            <xs:annotation>
+              <xs:documentation>A tranzakció eredménye</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateCashReceiptResponse" nillable="false" type="tns:CreateCashReceiptResponse"/>
+
+  <xs:complexType name="DownloadCashReceiptResponse">
+    <xs:annotation>
+      <xs:documentation>Bizonylat letöltés válasz</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QueryResult" nillable="true" type="data:DownloadCashReceiptQueryResult">
+            <xs:annotation>
+              <xs:documentation>A lekérdezés eredménye</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadCashReceiptResponse" nillable="false" type="tns:DownloadCashReceiptResponse"/>
+
+</xs:schema>

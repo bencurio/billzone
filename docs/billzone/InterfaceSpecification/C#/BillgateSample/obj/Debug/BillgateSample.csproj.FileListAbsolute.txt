@@ -1,0 +1,20 @@
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\ConsoleApplication1\bin\Debug\BillgateSample.exe.config
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\ConsoleApplication1\bin\Debug\BillgateSample.exe
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\ConsoleApplication1\bin\Debug\BillgateSample.pdb
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\ConsoleApplication1\obj\Debug\BillgateSample.csprojResolveAssemblyReference.cache
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\ConsoleApplication1\obj\Debug\BillgateSample.exe
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\ConsoleApplication1\obj\Debug\BillgateSample.pdb
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\BillgateSample\bin\Debug\BillgateSample.exe.config
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\BillgateSample\bin\Debug\BillgateSample.exe
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\BillgateSample\bin\Debug\BillgateSample.pdb
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\BillgateSample\obj\Debug\BillgateSample.csprojResolveAssemblyReference.cache
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\BillgateSample\obj\Debug\BillgateSample.exe
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\BillgateSample\obj\Debug\BillgateSample.pdb
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\BillgateSample\bin\Debug\BillgateSample.exe.config
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\BillgateSample\bin\Debug\BillgateSample.exe
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\BillgateSample\bin\Debug\BillgateSample.pdb
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\BillgateSample\bin\Debug\DomainModel.dll
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\BillgateSample\bin\Debug\DomainModel.pdb
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\BillgateSample\obj\Debug\BillgateSample.csprojResolveAssemblyReference.cache
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\BillgateSample\obj\Debug\BillgateSample.exe
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\BillgateSample\obj\Debug\BillgateSample.pdb

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="billzone_report_invoice_document" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@class='page']//h2[1]//span[1]" position="replace">
+                <span t-if="o.type == 'out_invoice' and o.state in ('open', 'in_payment', 'paid')">Megrendelés</span>
+            </xpath>
+            <xpath expr="//div[@class='page']//h2[1]//span[2]" position="replace">
+                <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Megrendelés tervezet</span>
+            </xpath>
+            <xpath expr="//div[@class='page']//h2[1]//span[3]" position="replace">
+                <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Törölt megrendelés</span>
+            </xpath>
+            <xpath expr="//div[@name='description']" position="before">
+                <div class="col-auto mw-100 mb-2" t-if="o.BillzoneInvoiceNo" name="invoice_no">
+                    <strong>Számlaszám:</strong>
+                    <p class="m-0"><a t-att-href="o.get_portal_url(report_type='pdf', download=True)"><span t-field="o.BillzoneInvoiceNo"/> <i class="fa fa-download"/></a></p>
+                </div>
+            </xpath>
+            <xpath expr="//div[@name='invoice_date']//strong" position="replace">
+                <strong>Rendelési dátum:</strong>
+            </xpath>
+        </template>
+
+        <template id="billzone_portal_invoice_page" inherit_id="account.portal_invoice_page">
+            <xpath expr="//div[@class='o_download_pdf btn-toolbar flex-sm-nowrap']" position="before">
+                <div class="small mb-1" t-if="invoice.type == 'out_invoice'"><strong class="text-muted">Számla letöltése</strong></div>
+            </xpath>
+        </template>
+
+        <template id="billzone_portal_my_invoices" inherit_id="account.portal_my_invoices">
+            <xpath expr="//thead[1]//tr//th[1]" position="after">
+                <th>Számlaszám</th>
+            </xpath>
+            <xpath expr="//thead[1]//tr//th[1]" position="replace" />
+            <xpath expr="//tbody[1]//tr//td[1]" position="after">
+                <td>
+                    <a t-att-href="invoice.get_portal_url()" t-att-title="invoice.number">
+                        <t t-esc="invoice.BillzoneCustomInvoiceNo" t-if="invoice.BillzoneCustomInvoiceNo"/>
+                        <t t-esc="invoice.BillzoneInvoiceNo" t-elif="invoice.BillzoneInvoiceNo"/>
+                        <t t-esc="invoice.number" t-elif="invoice.number"/>
+                        <t t-else=""><em>Piszkozat</em></t>
+                        <i class="fa fa-eye"/>
+                    </a>
+                </td>
+            </xpath>
+            <xpath expr="//tbody[1]//tr//td[1]" position="replace" />
+        </template>
+    </data>
+</odoo>

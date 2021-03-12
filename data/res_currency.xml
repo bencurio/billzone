@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record id="base.HUF" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.CAD" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.USD" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.GBP" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.JPY" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.EUR" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.CHF" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.NOK" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.AUD" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.BGN" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.CZK" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.DKK" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.HRK" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.PLN" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.RON" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.SEK" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+        <record id="base.RSD" model="res.currency">
+            <field name="BillzoneSupport">True</field>
+        </record>
+    </data>
+</odoo>

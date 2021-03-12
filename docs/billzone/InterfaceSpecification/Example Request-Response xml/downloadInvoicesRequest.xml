@@ -1,0 +1,18 @@
+﻿<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:ns1="http://Billzone.Billgate.Invoicing.Messages" xmlns:ns2="http://Billzone.Billgate.Invoicing.DataModel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns3="http://Billzone.Billgate.Invoicing">
+  <SOAP-ENV:Body>
+    <ns3:DownloadInvoices>
+      <ns3:request>
+        <ns1:RequestId>48888</ns1:RequestId>
+        <ns1:SecurityToken>9ICOPE3QYHT4LS3JM1ECZRJF47NLGN3GSLJ2R2WE</ns1:SecurityToken>
+        <ns1:DownloadInvoicesQuery>
+          <ns2:CompressResult>false</ns2:CompressResult>
+          <ns2:FilterSpecification xsi:type="ns2:DownloadInvoicesPeriodFilter">
+            <ns2:PeriodStart>2013-06-25</ns2:PeriodStart>
+            <ns2:PeriodEnd>2013-06-27</ns2:PeriodEnd>
+          </ns2:FilterSpecification>
+        </ns1:DownloadInvoicesQuery>
+      </ns3:request>
+    </ns3:DownloadInvoices>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

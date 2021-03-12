@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.billzone</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="priority" eval="50"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='general_settings']" position="inside">
+                <style>
+                    .billzone h2.header {
+                        background-color: #e20074!important;
+                        color: #fff!important;
+                        text-transform: uppercase;
+                        padding: 15px 16px!important;
+                    }
+                    .billzone .description {
+                        padding: 20px 50px 0 50px;
+                    }
+                    .billzone .o_setting_right_pane,
+                    .billzone .o_setting_left_pane {
+                        border-left-color: #e20074!important;
+                    }
+                    .billzone label.o_form_label {
+                        color: #e20074!important;
+                        text-transform: uppercase;
+                    }
+                    .billzone .billzone-mode {
+                        line-height: 38px;
+                        float: right;
+                    }
+                    .billzone .billzone-mode-icon {
+                        margin-right: 10px;
+                        margin-left: 5px;
+                    }
+                    .billzone .btn-primary {
+                        background-color: rgb(102, 102, 102) !important;
+                        border-color: rgb(102, 102, 102) !important;
+                    }
+                    .billzone .badge {
+                        background: #e20074;
+                        color: #fff;
+                        text-transform: uppercase;
+                    }
+                    .billzone .btn-billzone {
+                        background: #e20074;
+                        color: #fff;
+                    }
+                    .billzone .live-btn {
+                        background: #e20074;
+                        color: #fff;
+                        width: 49%;
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+                    .billzone .sandbox-btn {
+                        background: rgb(102, 102, 102);
+                        color: #fff;
+                        width: 49%;
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+                </style>
+            </xpath>
+            <!--<xpath expr="//div[@data-key='general_settings']" position="inside">-->
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <!--<div class="billzone" name="billzone">-->
+                <div class="app_settings_block billzone" data-string="BillZone" string="BillZone" data-key="billzone" groups="base.group_system">
+                    <h2 class="header">
+                        <img src="/billzone/static/src/img/branding/billzone_logo.png" alt="BillZone"/>
+                        <h1 class="billzone-mode"
+                            attrs="{'invisible': [('BillzoneServerMode', '!=', 'sandbox.billzone.eu')]}">TESZTELÉSI MÓD
+                        </h1>
+                        <h1 class="billzone-mode" attrs="{'invisible': [('BillzoneServerMode', '!=', 'billzone.eu')]}">
+                            ÉLES MÓD
+                        </h1>
+                    </h2>
+                    <div class="description">
+                        Érdemes időt szánni az ERP és a Billzone rendszereinek összehangolására. Kezdetben javasolt a
+                        Tesztelési módot használni és olyan helyi ERP telepítést, ahol lehet tesztelni következmények
+                        nélkül. A BillZone Sandbox rendszere díjmentes és egyéb kötelezettségek nélkül használható.
+                    </div>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"></div>
+                            <div class="o_setting_right_pane">
+                                <label for="BillzoneServerMode" string="Üzemmód kiválasztása" class="o_form_label"/>
+                                <div class="text-muted">
+                                    Éles vagy teszt rendszer használata
+                                </div>
+                                <div style="padding: 10px 15px;">
+                                    <field name="BillzoneServerMode" widget="radio" nolabel="1"/>
+                                </div>
+                                <div>
+                                    Tesztelés módban a Billzone díjmentesen használható és nem állít ki valós
+                                    számlát.
+                                </div>
+                            </div>
+                            <div style="margin-left: 25px; margin-top: 15px;">
+                                <div style="margin-right: 5px;">Billzone felületének megnyitása:</div>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'sandbox.billzone.eu')]}" href="https://www.billzone.eu/" target="_blank" class="btn btn-secondary sandbox-btn pull-left">
+                                    Éles mód
+                                    <i class="fa fa-caret-right"/>
+                                </a>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'billzone.eu')]}" href="https://www.billzone.eu/" target="_blank" class="btn btn-secondary live-btn pull-left">
+                                    Éles mód
+                                    <i class="fa fa-caret-right"/>
+                                </a>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'sandbox.billzone.eu')]}" href="https://sandbox.billzone.eu/" target="_blank" class="btn btn-secondary live-btn pull-right">
+                                    Tesztelési mód
+                                    <i class="fa fa-caret-right"/>
+                                </a>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'billzone.eu')]}" href="https://sandbox.billzone.eu/" target="_blank" class="btn btn-secondary sandbox-btn pull-right">
+                                    Tesztelési mód
+                                    <i class="fa fa-caret-right"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"></div>
+                            <div class="o_setting_right_pane" style="border-left-color: #e20074;">
+                                <label for="BillzoneSecurityToken" string="API kulcsok" class="o_form_label"/>
+                                <div class="text-muted">
+                                    Az API kapcsolat működéséhez engedélyezni kell a szerver IP címét!
+                                </div>
+                                <div style="padding: 10px 15px;">
+                                    <field name="BillzoneSecurityToken" password="True" nolabel="1"/>
+                                    <i class="fa fa-hand-o-left"
+                                       attrs="{'invisible': [('BillzoneServerMode', '!=', 'sandbox.billzone.eu')]}"/>
+                                    (tesztelési módnál)
+                                    <field name="BillzoneSecurityTokenForLive" password="True" nolabel="1"/>
+                                    <i class="fa fa-hand-o-left"
+                                       attrs="{'invisible': [('BillzoneServerMode', '!=', 'billzone.eu')]}"/>
+                                    (éles módnál)
+                                </div>
+                                <div>
+                                    Az API kulcs a Billzone.eu felületén való belépés után látható. A Saját fiók <em>
+                                    (profilra kattintva)
+                                </em> -> API BEÁLLÍTÁSOK menüpontba kell navigálni. Itt engedélyezni kell a szerver
+                                    IP-címét vagy ha az nem ismert, akkor ki kell kapcsolni az IP cím ellenőrzését.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="header">
+                        Beállítások
+                    </h2>
+                    <div class="description">
+                        Pontokba szedve itt láthatóak azon beállítások, amit el kell végezni a megfelelő működéshez.
+                        Fontos, hogy egyes azonosítók megegyezzenk az ERP és a Billzone rendszerén belül!
+                    </div>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"></div>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">1, Naplók <span class="fa fa-arrows-h" /> Számlatömbök beállítása</span>
+                                <div style="margin-bottom: 15px;">
+                                    Külön-külön be kell állítani, hogy a Billzone rendszerében szereplő Számlatömbök milyen
+                                    naplókhoz kapcsolódjanak az ERP rendszerben.
+                                </div>
+                                <button type="action" name="%(account.action_account_journal_form)d"
+                                        class="oe_highlight"><span class="fa fa-cogs" /> Naplók</button>
+                                <div class="btn"><span class="fa fa-arrows-h" /></div>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'sandbox.billzone.eu')]}" href="https://sandbox.billzone.eu/HU/hu/Pages/Company/AccountBlockList.aspx" target="_blank" class="btn btn-billzone"><span class="fa fa-external-link"/> Számlatömbök</a>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'billzone.eu')]}" href="https://billzone.eu/HU/hu/Pages/Company/AccountBlockList.aspx" target="_blank" class="btn btn-billzone"><span class="fa fa-external-link"/> Számlatömbök</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"></div>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">2, Fizetés kézhezvevői <span class="fa fa-arrows-h" /> Fizetési módok beállítása</span>
+                                <div style="margin-bottom: 15px;">
+                                    Az online számlafizetés megvalósításához össze kell hangolni a Billzone rendszerében található fizetési módokat.
+                                </div>
+                                <button type="action" name="%(payment.action_payment_acquirer)d"
+                                        class="oe_highlight"><span class="fa fa-cogs" /> Fizetés kézhezvevői</button>
+                                <div class="btn"><span class="fa fa-arrows-h" /></div>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'sandbox.billzone.eu')]}" href="https://sandbox.billzone.eu/HU/hu/Pages/Company/BankList.aspx" target="_blank" class="btn btn-billzone"><span class="fa fa-external-link"/> Fizetési módok</a>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'billzone.eu')]}" href="https://billzone.eu/HU/hu/Pages/Company/BankList.aspx" target="_blank" class="btn btn-billzone"><span class="fa fa-external-link"/> Fizetési módok</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"></div>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">3, Adók <span class="fa fa-arrows-h" /> ÁFA kódok beállítása</span>
+                                <div style="margin-bottom: 15px;">
+                                    Érdemes felülvizsgálni, hogy megfelelően megtörtént-e az ÁFA összekapcsolása a számlázórendszerrel. Kizárólag csak az ERP alapértelmezett ÁFA kódjai kerülnek összekapcsolásra! A hiányzókat fel kell venni a Billzone TÖRZSADATOK / ÁFA KÓDOK (ÁFA Kód) alapján.
+                                </div>
+                                <button type="action" name="%(account.action_tax_form)d"
+                                        class="oe_highlight"><span class="fa fa-cogs" /> Adók</button>
+                                <div class="btn"><span class="fa fa-arrows-h" /></div>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'sandbox.billzone.eu')]}" href="https://sandbox.billzone.eu/HU/hu/Pages/Company/CompanyTaxCategoryList.aspx" target="_blank" class="btn btn-billzone"><span class="fa fa-external-link"/> ÁFA kódok</a>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'billzone.eu')]}" href="https://billzone.eu/HU/hu/Pages/Company/CompanyTaxCategoryList.aspx" target="_blank" class="btn btn-billzone"><span class="fa fa-external-link"/> ÁFA kódok</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"></div>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">4, Mértékegység <span class="fa fa-arrows-h" /> Mennyiségi egységek beállítása</span>
+                                <div style="margin-bottom: 15px;">
+                                    A számlázáshoz elengedhetettlen, hogy az ERP és a Billzone rendszerében be legyen állítva milyen mértékegység melyik mennyiségi egységhez tartozik.
+                                </div>
+                                <button type="action" name="%(uom.product_uom_form_action)d"
+                                        class="oe_highlight"><span class="fa fa-cogs" /> Mértékegység</button>
+                                <div class="btn"><span class="fa fa-arrows-h" /></div>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'sandbox.billzone.eu')]}" href="https://sandbox.billzone.eu/HU/hu/Pages/Company/UnitList.aspx" target="_blank" class="btn btn-billzone"><span class="fa fa-external-link"/> Mennyiségi egységek</a>
+                                <a attrs="{'invisible': [('BillzoneServerMode', '!=', 'billzone.eu')]}" href="https://billzone.eu/HU/hu/Pages/Company/UnitList.aspx" target="_blank" class="btn btn-billzone"><span class="fa fa-external-link"/> Mennyiségi egységek</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

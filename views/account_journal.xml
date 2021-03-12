@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="billzone_account_journal_settings" model="ir.ui.view">
+            <field name="name">account.journal.form.inherit_billzone_account_journal_settings</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[1]//sheet[1]//notebook[1]" position="inside">
+                    <page name="billzone_settings" string="BillZone beállítások" attrs="{'visible': [('type', 'in', ('sale', 'bank'))]}">
+                        <group name="billzone_settings" class="o_settings_container">
+                            <div>
+                                <div class="col-12 col-lg-12 o_setting_box">
+                                    <div class="o_setting_left_pane"></div>
+                                    <div class="o_setting_right_pane" style="border-left-color: #e20074;">
+                                        <field name="BillzoneEnable"
+                                               attrs="{'invisible': [('type', 'not in', ('sale', 'bank'))]}"
+                                               nolabel="1"/>
+                                        <label for="BillzoneEnable"
+                                               string="BillZone integráció bekapcsolása ennél a naplónál"
+                                               class="o_form_label" style="color: #e20074;"/>
+                                        <div attrs="{'invisible': [('type', 'not in', ('sale'))]}">
+                                            Bekapcsolás esetén aktiválásra kerül a Billzone integráció és az ERP által biztosított alapértelmezett PDF számlakép és egyes funkciók felülírásra kerülnek.
+                                        </div>
+                                        <div attrs="{'invisible': [('type', 'not in', ('bank'))]}">
+                                            Bekapcsolás esetén aktiválásra kerül a Billzone integráció.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-12 col-lg-12 o_setting_box"
+                                     attrs="{'invisible': ['|', ('BillzoneEnable', '!=', True), ('type', 'not in', ('sale'))]}">
+                                    <div class="o_setting_left_pane"></div>
+                                    <div class="o_setting_right_pane" style="border-left-color: #e20074;">
+                                        <label for="BillzoneAccountBlockPrefix"
+                                               string="Számlatömb jele"
+                                               class="o_form_label" style="color: #e20074;"/>
+                                        <field name="BillzoneAccountBlockPrefix" nolabel="1"/>
+                                        <div>
+                                            Meg kell egyeznie a Billzone rendszerében a TÖRZSADATOK / SZÁMLATÖMBÖK menüpontban található értékeinek egyikével.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-12 o_setting_box"
+                                     attrs="{'invisible': ['|', ('BillzoneEnable', '!=', True), ('type', 'not in', ('sale'))]}">
+                                    <div class="o_setting_left_pane"></div>
+                                    <div class="o_setting_right_pane" style="border-left-color: #e20074;">
+                                        <label for="BillzoneEntityInvoiceIssuerIdentifier"
+                                               string="Telephelyazonosító"
+                                               class="o_form_label" style="color: #e20074;"/>
+                                        <field name="BillzoneEntityInvoiceIssuerIdentifier" nolabel="1"/>
+                                        <div>
+                                            A TÖRZSADATOK / TELEPHELYEK menüpontban találhatóak az értékek és a "Telephelyazonosító"-t kell megadni.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-12 o_setting_box"
+                                     attrs="{'invisible': ['|', ('BillzoneEnable', '!=', True), ('type', 'not in', ('sale', 'bank'))]}">
+                                    <div class="o_setting_left_pane"></div>
+                                    <div class="o_setting_right_pane" style="border-left-color: #e20074;">
+                                        <label for="BillzoneEntityBankIdentifier"
+                                               string="Fizetési mód azonosító"
+                                               class="o_form_label" style="color: #e20074;"/>
+                                        <field name="BillzoneEntityBankIdentifier" nolabel="1"/>
+                                        <div>
+                                            Meg kell adni a TÖRZSADATOK / FIZETÉSI MÓDOK menüpontban található "Interfészhez (API) kapcsolódó fizetési mód azonosító" egyikét.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

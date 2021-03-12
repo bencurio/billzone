@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="billzone_account_invoice_alter" model="ir.ui.view">
+            <field name="name">account.invoice.form.billzone_account_invoice_alter</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//header[1]//button[@name='action_invoice_sent']" position="attributes">
+                        <attribute name="invisible"></attribute>
+                    </xpath>
+                    <!--<field name="BillzoneInvoiceNo" />-->
+                </data>
+            </field>
+        </record>
+
+        <record id="billzone_account_invoice_tree_alter" model="ir.ui.view">
+            <field name="name">account.invoice.tree.billzone_account_invoice_tree_alter</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//tree[1]//field[@name='partner_id']" position="before">
+                        <field name="BillzoneInvoiceNo" string="Számlaszám"/>
+                    </xpath>
+                    <xpath expr="//tree[1]//field[@name='number']" position="attributes">
+                        <attribute name="string">Belső hivatkozás</attribute>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="billzone_account_invoice_filter_alter" model="ir.ui.view">
+            <field name="name">account.invoice.filter.billzone_account_invoice_filter_alter</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//search[1]//field[@name='number']" position="before">
+                        <field name="BillzoneInvoiceNo" string="Számlaszám"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="billzone_account_invoice_form_alter" model="ir.ui.view">
+            <field name="name">account.invoice.filter.billzone_account_invoice_form_alter</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//form[1]//sheet[1]//h1[1]//div[1]//field[@name='number']" position="before">
+                        <span attrs="{'invisible': [('BillzoneInvoiceNo', '=', False)]}">
+                            <field name="BillzoneInvoiceNo" string="Számlaszám" class="oe_inline"/>
+                        </span>
+                    </xpath>
+                    <xpath expr="//form[1]//sheet[1]//group[1]//group[1]//field[@name='cash_rounding_id']"
+                           position="after">
+                        <!--<field name="BillzoneInvoiceDocumentType" string="Számla típusa" class="oe_inline"-->
+                               <!--attrs="{'required': True, 'readonly': ['|', ('state', 'in', ['open', 'in_payment', 'paid'])]}"-->
+                               <!--force_save="1" widget="radio" default_focus="1"/>-->
+                        <!--<field name="BillzoneReferenceInvoiceNumber"-->
+                               <!--attrs="{'required': True, 'invisible': [('BillzoneInvoiceDocumentType', 'not in', [2,3,4])], 'readonly': ['|', ('state', 'in', ['open', 'in_payment', 'paid'])]}"-->
+                        <!--/>-->
+                        <!--<field name="BillzoneReferenceInvoiceFulfillmentDate"-->
+                               <!--attrs="{'required': True, 'invisible': [('BillzoneInvoiceDocumentType', 'not in', [2,3,4])], 'readonly': ['|', ('state', 'in', ['open', 'in_payment', 'paid'])]}"-->
+                        <!--/>-->
+                        <!--<field name="BillzoneReferenceInvoiceNumberExternal"-->
+                               <!--invisible="1"-->
+                               <!--/>-->
+                    </xpath>
+                    <xpath expr="//form[1]//sheet[1]"
+                           position="inside">
+                        <div class="BillzoneIsDomesticDelivery" attrs="{'invisible': [('BillzoneInterEUVatExempt', '=', True)]}">
+                            <field name="BillzoneIsDomesticDelivery" attrs="{'readonly': ['|', ('state', 'in', ['open', 'in_payment', 'paid'])], 'readonly': [('BillzoneInterEUVatExempt', '=', True)]}" /> <label for="BillzoneIsDomesticDelivery" /> <br />
+                        </div>
+                        <div class="BillzoneInterEUVatExempt" attrs="{'invisible': [('BillzoneIsDomesticDelivery', '=', True)]}">
+                            <field name="BillzoneInterEUVatExempt" attrs="{'readonly': ['|', ('state', 'in', ['open', 'in_payment', 'paid'])]}" /> <label for="BillzoneInterEUVatExempt" />
+                        </div>
+                        <div class="BillzoneInvoiceHasElectronicServiceInEU" attrs="{'invisible': [('BillzoneIsDomesticDelivery', '=', True)]}">
+                            <field name="BillzoneInvoiceHasElectronicServiceInEU"  attrs="{'invisible': [('BillzoneIsDomesticDelivery', '=', True)], 'readonly': ['|', ('state', 'in', ['open', 'in_payment', 'paid'])]}" /> <label for="BillzoneInvoiceHasElectronicServiceInEU" />
+                        </div>
+                        <div class="BillzoneCustomPDFEnable">
+                            <field name="BillzoneCustomPDFEnable" attrs="{'readonly': ['|', ('state', 'in', ['open', 'in_payment', 'paid'])]}" /> <label for="BillzoneCustomPDFEnable" />
+                            <field name="BillzoneCustomPDF" widget="binary" attrs="{'invisible': [('BillzoneCustomPDFEnable', '!=', True)], 'readonly': ['|', ('state', 'in', ['open', 'in_payment', 'paid'])]}" />
+                            <div class="BillzoneCustomInvoiceNo" attrs="{'invisible': [('BillzoneCustomPDFEnable', '!=', True)]}">
+                                <label for="BillzoneCustomInvoiceNo" /> <field name="BillzoneCustomInvoiceNo" attrs="{'readonly': ['|', ('state', 'in', ['open', 'in_payment', 'paid'])]}" />
+                            </div>
+                            <div class="BillzoneCustomPDFWarn" attrs="{'invisible': ['|', ('BillzoneCustomPDFEnable', '!=', True), ('state', 'in', ['open', 'in_payment', 'paid'])]}" style="font-weight: bold; background-color: #dc3545; color: #fff; padding: 15px 25px;">
+                                Figyelem! A külső számlakép használata esetén letiltásra kerülnek a BillZone funkciók. Ezt a funkciót akkor érdemes használni, ha a számla már kiállításra került egy korábbi számlázó szoftverben és fel kell tölteni ebbe a rendszerbe.
+                            </div>
+                        </div>
+                    </xpath>
+                    <xpath expr="//form[1]//sheet[1]//h1[1]//div[1]//field[@name='number']" position="attributes">
+                        <attribute name="class">oe_inline pull-right</attribute>
+                        <attribute name="style">font-size: 12px;</attribute>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>
+

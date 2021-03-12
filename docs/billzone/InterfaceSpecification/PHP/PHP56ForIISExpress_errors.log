@@ -1,0 +1,293 @@
+[02-Nov-2016 12:42:12 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 12:42:12 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(9): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 12:43:00 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 12:43:00 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(12): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 12:44:54 Europe/Belgrade] PHP Notice:  Undefined variable: ch in C:\inetpub\wwwroot\php\generator.php on line 5
+[02-Nov-2016 12:44:54 Europe/Belgrade] PHP Warning:  curl_setopt() expects parameter 1 to be resource, null given in C:\inetpub\wwwroot\php\generator.php on line 5
+[02-Nov-2016 12:44:54 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 12:44:54 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(12): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 12:52:30 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 12:52:30 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(12): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 12:52:33 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 12:52:33 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(12): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:00:10 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:00:10 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(12): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:00:14 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:00:14 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(12): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:00:22 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:00:22 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(12): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:00:27 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:00:27 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(12): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:00:28 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:00:28 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(12): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:00:32 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:00:32 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(12): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:35:12 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:35:12 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(12): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:39:26 Europe/Belgrade] PHP Notice:  Undefined variable: url in C:\inetpub\wwwroot\php\generator.php on line 17
+[02-Nov-2016 13:39:26 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from '?WSDL' : failed to load external entity "?WSDL"
+ in C:\inetpub\wwwroot\php\generator.php on line 17
+[02-Nov-2016 13:39:26 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from '?WSDL' : failed to load external entity "?WSDL"
+ in C:\inetpub\wwwroot\php\generator.php:17
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(17): SoapClient->SoapClient('?WSDL', Array)
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\generator.php on line 17
+[02-Nov-2016 13:40:05 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:40:05 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(20): WSDLInterpreter->__construct('https://sandbox...', Array)
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:40:32 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?WSDL' : failed to load external entity "https://sandbox.billzone.eu/billgate?WSDL"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:40:32 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?WSDL' : failed to load external entity "https://sandbox.billzone.eu/billgate?WSDL"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(20): WSDLInterpreter->__construct('https://sandbox...', Array)
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:40:33 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?WSDL' : failed to load external entity "https://sandbox.billzone.eu/billgate?WSDL"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:40:33 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?WSDL' : failed to load external entity "https://sandbox.billzone.eu/billgate?WSDL"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(20): WSDLInterpreter->__construct('https://sandbox...', Array)
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:40:34 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?WSDL' : failed to load external entity "https://sandbox.billzone.eu/billgate?WSDL"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:40:34 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?WSDL' : failed to load external entity "https://sandbox.billzone.eu/billgate?WSDL"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(20): WSDLInterpreter->__construct('https://sandbox...', Array)
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:40:45 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:40:45 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(20): WSDLInterpreter->__construct('https://sandbox...', Array)
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:43:53 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:43:53 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(15): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:48:13 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://localhost:1113/BillgateService?wsdl' : failed to load external entity "http://localhost:1113/BillgateService?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 13:48:13 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://localhost:1113/BillgateService?wsdl' : failed to load external entity "http://localhost:1113/BillgateService?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('http://localhos...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(10): InvoicingService->__construct()
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 13:48:51 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://localhost:1113/BillgateService?wsdl' : failed to load external entity "http://localhost:1113/BillgateService?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 13:48:51 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://localhost:1113/BillgateService?wsdl' : failed to load external entity "http://localhost:1113/BillgateService?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('http://localhos...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(10): InvoicingService->__construct()
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 13:49:07 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:49:07 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(13): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:55:20 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 115
+[02-Nov-2016 13:55:20 Europe/Belgrade] PHP Fatal error:  Uncaught exception 'WSDLInterpreterException' with message 'Error loading WSDL document (SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+)' in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php:160
+Stack trace:
+#0 C:\inetpub\wwwroot\php\generator.php(13): WSDLInterpreter->__construct('https://sandbox...')
+#1 {main}
+  thrown in C:\inetpub\wwwroot\php\WSDLInterpreter-v1.0.0\WSDLInterpreter.php on line 160
+[02-Nov-2016 13:55:47 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [HTTP] Cannot process the message because the content type 'application/soap+xml; charset=utf-8; action="http://Billzone.Billgate.Invoicing/IInvoicing/CreateInvoice"' was not the expected type 'text/xml; charset=utf-8'. in C:\inetpub\wwwroot\php\InvoicingService.php:1394
+Stack trace:
+#0 [internal function]: SoapClient->__doRequest('<?xml version="...', 'https://sandbox...', 'http://Billzone...', 2, 0)
+#1 C:\inetpub\wwwroot\php\InvoicingService.php(1394): SoapClient->__soapCall('CreateInvoice', Array)
+#2 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(72): InvoicingService->CreateInvoice(Object(CreateInvoice))
+#3 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1394
+[02-Nov-2016 13:57:07 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 13:57:07 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('https://sandbox...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(15): InvoicingService->__construct('https://sandbox...', Array)
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 13:57:53 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 13:57:53 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('https://sandbox...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(15): InvoicingService->__construct('https://sandbox...', Array)
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 13:58:08 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [HTTP] Cannot process the message because the content type 'application/soap+xml; charset=utf-8; action="http://Billzone.Billgate.Invoicing/IInvoicing/CreateInvoice"' was not the expected type 'text/xml; charset=utf-8'. in C:\inetpub\wwwroot\php\InvoicingService.php:1394
+Stack trace:
+#0 [internal function]: SoapClient->__doRequest('<?xml version="...', 'https://sandbox...', 'http://Billzone...', 2, 0)
+#1 C:\inetpub\wwwroot\php\InvoicingService.php(1394): SoapClient->__soapCall('CreateInvoice', Array)
+#2 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(72): InvoicingService->CreateInvoice(Object(CreateInvoice))
+#3 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1394
+[02-Nov-2016 14:01:36 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:01:37 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('https://sandbox...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(13): InvoicingService->__construct('https://sandbox...')
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:03:28 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:03:28 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('https://sandbox...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(13): InvoicingService->__construct('https://sandbox...', Array)
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:05:28 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:05:28 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('https://sandbox...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(13): InvoicingService->__construct('https://sandbox...', Array)
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:05:51 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:05:51 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('https://sandbox...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(13): InvoicingService->__construct('https://sandbox...')
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:08:58 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:08:58 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('https://sandbox...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(13): InvoicingService->__construct('https://sandbox...', Array)
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:14:28 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:14:28 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('https://sandbox...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(13): InvoicingService->__construct('https://sandbox...', Array)
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:15:05 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:15:05 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('https://sandbox...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(13): InvoicingService->__construct('https://sandbox...', Array)
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:16:25 Europe/Belgrade] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355
+[02-Nov-2016 14:16:25 Europe/Belgrade] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://sandbox.billzone.eu/billgate?wsdl' : failed to load external entity "https://sandbox.billzone.eu/billgate?wsdl"
+ in C:\inetpub\wwwroot\php\InvoicingService.php:1355
+Stack trace:
+#0 C:\inetpub\wwwroot\php\InvoicingService.php(1355): SoapClient->SoapClient('https://sandbox...', Array)
+#1 C:\inetpub\wwwroot\php\CreateInvoiceWithDefaults.php(13): InvoicingService->__construct('https://sandbox...', Array)
+#2 {main}
+  thrown in C:\inetpub\wwwroot\php\InvoicingService.php on line 1355

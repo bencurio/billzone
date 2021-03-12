@@ -1,0 +1,6 @@
+c:\users\szabi\documents\visual studio 2012\Projects\InterfaceTest\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\ConsoleApplication1\bin\Debug\BillgateSample.exe.config
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\ConsoleApplication1\bin\Debug\BillgateSample.exe
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\ConsoleApplication1\bin\Debug\BillgateSample.pdb
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\ConsoleApplication1\obj\Debug\BillgateSample.exe
+C:\Users\Szabi\Documents\Visual Studio 2012\Projects\InterfaceTest\ConsoleApplication1\obj\Debug\BillgateSample.pdb

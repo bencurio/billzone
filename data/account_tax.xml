@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <!-- Hungarian -->
+        <record id="l10n_hu.F27" model="account.tax">
+            <field name="BillzoneVatTaxRateCode">S</field>
+            <field name="BillzoneVatTaxRateName">27%-os ÁFA kulcs</field>
+        </record>
+        <record id="l10n_hu.F18" model="account.tax">
+            <field name="BillzoneVatTaxRateCode">AA-2</field>
+            <field name="BillzoneVatTaxRateName">18%-os ÁFA kulcs</field>
+        </record>
+        <record id="l10n_hu.F5" model="account.tax">
+            <field name="BillzoneVatTaxRateCode">AA-1</field>
+            <field name="BillzoneVatTaxRateName">5%-os ÁFA kulcs</field>
+        </record>
+        <record id="l10n_hu.FA" model="account.tax">
+            <field name="BillzoneVatTaxRateCode">E-AAG1</field>
+            <field name="BillzoneVatTaxRateName">Alanyi adómentes (az ÁFA tv. 187-196.§ szerint).</field>
+        </record>
+        <record id="l10n_hu.FT" model="account.tax">
+            <field name="BillzoneVatTaxRateCode">E-AAG3</field>
+            <field name="BillzoneVatTaxRateName">Tárgyi adómentes: mentes az adó alól a tevékenység sajátos jellegére tekintettel (az ÁFA tv. 86-87.§ szerint).</field>
+        </record>
+        <record id="l10n_hu.FF" model="account.tax">
+            <field name="BillzoneVatTaxRateCode">AE-AAO</field>
+            <field name="BillzoneVatTaxRateName">Fordított adózás: FIGYELEM! A termék beszerzője, a szolgáltatás igénybevevője az adófizetésre kötelezett (az ÁFA tv. 142.§ szerint).</field>
+        </record>
+        <record id="l10n_hu.FEUO" model="account.tax">
+            <field name="BillzoneVatTaxRateCode">G-AAA2</field>
+            <field name="BillzoneVatTaxRateName">Mentes az adó alól az export termékértékesítéshez közvetlen kapcsolódó szolgáltatásnyújtás (ÁFA törvény 102§ (2).</field>
+        </record>
+        <record id="l10n_hu.FEU" model="account.tax">
+            <field name="BillzoneVatTaxRateCode">E-AAC</field>
+            <field name="BillzoneVatTaxRateName">Mentes az adó alól az export termékértékesítéshez közvetlen kapcsolódó szolgáltatásnyújtás (ÁFA törvény 102§ (2).</field>
+        </record>
+    </data>
+</odoo>

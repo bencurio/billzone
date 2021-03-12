@@ -1,0 +1,1657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://Billzone.Billgate.Invoicing.DataModel" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Billzone.Billgate.Invoicing.DataModel">
+
+  <xs:complexType name="Customer">
+    <xs:annotation>
+      <xs:documentation>Vevő adatok</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CustomerBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Name" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Vevő neve</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CustomerIdentifier" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Vevő azonosítója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EUTaxNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Vevő közösségi adószáma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TaxNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Vevő adószáma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="AddressPostalCode" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Vevő címe / Irányítószám</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="AddressCity" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Vevő címe / Város</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="AddressCountryId" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Vevő címe / Ország (ISO 3166-1-alpha-2)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="AddressLine1" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Vevő címe / Címsor 1</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AddressLine2" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Vevő címe / Címsor 2</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AddressState" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Vevő címe / Megye</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GroupIdentificationNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Csoportazonosító szám</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="false" type="tns:Customer"/>
+
+  <xs:complexType name="CustomerIdentifier">
+    <xs:annotation>
+      <xs:documentation>A megadott azonosítójú vevő</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CustomerBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Identifier" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Vevő azonosítója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerIdentifier" nillable="false" type="tns:CustomerIdentifier"/>
+
+  <xs:complexType name="DefaultBank">
+    <xs:annotation>
+      <xs:documentation>A számlatömbön meghatározott bank</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BankBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BankDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Banki megjegyzés</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DefaultBank" nillable="false" type="tns:DefaultBank"/>
+
+  <xs:complexType name="BankIdentifier">
+    <xs:annotation>
+      <xs:documentation>A megadott azonosítójú bank</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BankBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Identifier" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Bank azonosítója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="BankDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Banki megjegyzés</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankIdentifier" nillable="false" type="tns:BankIdentifier"/>
+
+  <xs:complexType name="IssuerAddressIdentifier">
+    <xs:annotation>
+      <xs:documentation>A megadott azonosítójú telephely</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IssuerAddressBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Identifier" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Telephely azonosítója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IssuerAddressIdentifier" nillable="false" type="tns:IssuerAddressIdentifier"/>
+
+  <xs:complexType name="DefaultIssuerAddress">
+    <xs:annotation>
+      <xs:documentation>A számlatömbön meghatározott telephely</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IssuerAddressBase">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DefaultIssuerAddress" nillable="false" type="tns:DefaultIssuerAddress"/>
+
+  <xs:complexType name="DefaultCurrency">
+    <xs:annotation>
+      <xs:documentation>A számlatömbön meghatározott pénznem</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CurrencyBase">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DefaultCurrency" nillable="false" type="tns:DefaultCurrency"/>
+
+  <xs:complexType name="CurrencyShortName">
+    <xs:annotation>
+      <xs:documentation>Pénznem ISO 4217 szerint</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CurrencyBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="ShortName" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>3 betűs ISO kód</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CurrencyShortName" nillable="false" type="tns:CurrencyShortName"/>
+
+  <xs:complexType name="DownloadInvoiceQuery">
+    <xs:annotation>
+      <xs:documentation>Számla letöltése</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="InvoiceNumber" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A letöltendő számla sorszáma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A letöltendő documentum típusa</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadInvoiceQuery" nillable="false" type="tns:DownloadInvoiceQuery"/>
+
+  <xs:complexType name="DownloadInvoiceQueryResult">
+    <xs:annotation>
+      <xs:documentation>Számla letöltés eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryResultBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A számla sorszáma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceDocument" nillable="true" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>A számla</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadInvoiceQueryResult" nillable="false" type="tns:DownloadInvoiceQueryResult"/>
+
+  <xs:complexType name="DownloadInvoicesQuery">
+    <xs:annotation>
+      <xs:documentation>Tömeges számla letöltés</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="CompressResult" nillable="false" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>A visszaadott számlákat tömöríteni kell</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="FilterSpecification" nillable="false" type="tns:DownloadInvoicesFilterBase">
+            <xs:annotation>
+              <xs:documentation>Szűrő specifikáció</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A letöltendő számla sorszáma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadInvoicesQuery" nillable="false" type="tns:DownloadInvoicesQuery"/>
+
+  <xs:complexType name="GetInvoiceDataQuery">
+    <xs:annotation>
+      <xs:documentation>Törzsadat lekérdezés letöltés</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryBase">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetInvoiceDataQuery" nillable="false" type="tns:GetInvoiceDataQuery"/>
+
+  <xs:complexType name="GetInvoiceDataQueryResult">
+    <xs:annotation>
+      <xs:documentation>Törzsadat lekérdezés letöltés eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryResultBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Units" nillable="true" type="tns:ArrayOfUnitsQueryResultItem">
+            <xs:annotation>
+              <xs:documentation>Mennyiségi egységek lista</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AccountBlocks" nillable="true" type="tns:ArrayOfAccountBlocksQueryResultItem">
+            <xs:annotation>
+              <xs:documentation>Számlatömb lista</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PaymentMethods" nillable="true" type="tns:ArrayOfPaymentMethodsQueryResultItem">
+            <xs:annotation>
+              <xs:documentation>Fizetési mód lista</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Issuers" nillable="true" type="tns:ArrayOfIssuersQueryResultItem">
+            <xs:annotation>
+              <xs:documentation>Telephely lista</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetInvoiceDataQueryResult" nillable="false" type="tns:GetInvoiceDataQueryResult"/>
+  
+   <xs:complexType name="DownloadCashReceiptQuery">
+    <xs:annotation>
+      <xs:documentation>Bizonylat letöltése</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="CashReceiptNumber" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A letöltendő bizonylat sorszáma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadCashReceiptQuery" nillable="false" type="tns:DownloadCashReceiptQuery"/>
+
+  <xs:complexType name="DownloadCashReceiptQueryResult">
+    <xs:annotation>
+      <xs:documentation>Bizonylat letöltés eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryResultBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CashReceiptNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A bizonylat sorszáma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CashReceiptDocument" nillable="true" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>A bizonylat</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadCashReceiptQueryResult" nillable="false" type="tns:DownloadCashReceiptQueryResult"/>
+
+  <xs:complexType name="DownloadInvoicesFilterBase">
+    <xs:annotation>
+      <xs:documentation>Tömeges számla letöltés szűrő őstípus</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DownloadInvoicesFilterBase" nillable="false" type="tns:DownloadInvoicesFilterBase"/>
+
+  <xs:complexType name="DownloadInvoicesPeriodFilter">
+    <xs:annotation>
+      <xs:documentation>Tömeges számla letöltés periódus szűrő</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DownloadInvoicesFilterBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="PeriodStart" nillable="false" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Periódus kezdete</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="PeriodEnd" nillable="false" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Periódus vége</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadInvoicesPeriodFilter" nillable="false" type="tns:DownloadInvoicesPeriodFilter"/>
+
+  <xs:complexType name="DownloadInvoicesQueryResult">
+    <xs:annotation>
+      <xs:documentation>Tömeges számla letöltés eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryResultBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Invoices" nillable="true" type="tns:ArrayOfDownloadInvoicesQueryResultItem">
+            <xs:annotation>
+              <xs:documentation>Számla letöltés eredmény lista</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DownloadInvoicesQueryResult" nillable="false" type="tns:DownloadInvoicesQueryResult"/>
+
+  <xs:complexType name="ArrayOfUnitsQueryResultItem">
+    <xs:annotation>
+      <xs:documentation>Mennyiségi egység adatok letöltés eredmény lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UnitsQueryResultItem" nillable="false" type="tns:UnitsQueryResultItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnitsQueryResultItem" nillable="false" type="tns:ArrayOfUnitsQueryResultItem"/>
+
+  <xs:complexType name="ArrayOfAccountBlocksQueryResultItem">
+    <xs:annotation>
+      <xs:documentation>Számlatömb adatok letöltés eredmény lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountBlocksQueryResultItem" nillable="false" type="tns:AccountBlocksQueryResultItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccountBlocksQueryResultItem" nillable="false" type="tns:ArrayOfAccountBlocksQueryResultItem"/>
+
+  <xs:complexType name="ArrayOfPaymentMethodsQueryResultItem">
+    <xs:annotation>
+      <xs:documentation>Fizetési mód adatok letöltés eredmény lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentMethodsQueryResultItem" nillable="false" type="tns:PaymentMethodsQueryResultItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentMethodsQueryResultItem" nillable="false" type="tns:ArrayOfPaymentMethodsQueryResultItem"/>
+
+  <xs:complexType name="ArrayOfIssuersQueryResultItem">
+    <xs:annotation>
+      <xs:documentation>Telephely adatok letöltés eredmény lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IssuersQueryResultItem" nillable="false" type="tns:IssuersQueryResultItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIssuersQueryResultItem" nillable="false" type="tns:ArrayOfIssuersQueryResultItem"/>
+
+  <xs:complexType name="UnitsQueryResultItem">
+    <xs:annotation>
+      <xs:documentation>Mennyiségi egység adatok letöltés eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UnitIdentifier" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Mennyiségi egység azonosító</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Name" nillable="false" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Mennyiségi egység neve</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnitsQueryResultItem" nillable="false" type="tns:UnitsQueryResultItem"/>
+
+  <xs:complexType name="AccountBlocksQueryResultItem">
+    <xs:annotation>
+      <xs:documentation>Számlatömb adatok letöltés eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountBlockPrefix" nillable="false" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Számlatömb jele</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CurrencyShortName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Alapértelmezett pénznem ISO</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountBlocksQueryResultItem" nillable="false" type="tns:AccountBlocksQueryResultItem"/>
+
+  <xs:complexType name="PaymentMethodsQueryResultItem">
+    <xs:annotation>
+      <xs:documentation>Fizetési mód letöltés eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BankIdentifier" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Fizetési mód azonosító (API)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PaymentMeansType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Fizetési mód megnevezés</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BankAccountNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Pénzforgalmi intézmény azonosító</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentMethodsQueryResultItem" nillable="false" type="tns:PaymentMethodsQueryResultItem"/>
+
+  <xs:complexType name="IssuersQueryResultItem">
+    <xs:annotation>
+      <xs:documentation>Fizetési mód letöltés eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Megnezvezés</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="InvoiceIssuerIdentifier" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Telephelyazonosító</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IssuersQueryResultItem" nillable="false" type="tns:IssuersQueryResultItem"/>
+  
+  <xs:complexType name="ArrayOfDownloadInvoicesQueryResultItem">
+    <xs:annotation>
+      <xs:documentation>Számla letöltés eredmény lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DownloadInvoicesQueryResultItem" nillable="false" type="tns:DownloadInvoicesQueryResultItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDownloadInvoicesQueryResultItem" nillable="false" type="tns:ArrayOfDownloadInvoicesQueryResultItem"/>
+
+  <xs:complexType name="DownloadInvoicesQueryResultItem">
+    <xs:annotation>
+      <xs:documentation>Számla letöltés eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A számla sorszáma</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="InvoiceDocument" nillable="true" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:documentation>A számla</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DownloadInvoicesQueryResultItem" nillable="false" type="tns:DownloadInvoicesQueryResultItem"/>
+
+  <xs:complexType name="ConvertExternalInvoiceTransaction">
+    <xs:annotation>
+      <xs:documentation>Számla aláírás tranzakciója</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TransactionBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Header" nillable="false" type="tns:InvoiceHeaderWithTotalAmount">
+            <xs:annotation>
+              <xs:documentation>Számla fejadatai</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="Lines" nillable="false" type="tns:ArrayOfInvoiceLineWithAmount">
+            <xs:annotation>
+              <xs:documentation>Számla tételei</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="VatGroups" nillable="false" type="tns:ArrayOfInvoiceVatGroup">
+            <xs:annotation>
+              <xs:documentation>ÁFA csoportosító lista</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SendInvoiceToCustomer" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Az számlaértesítő kiküldése a vevőnek</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SendInvoiceToEmailAddress" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A vevő emailcíme, ahova az értesítőt küldeni kell</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceCourierTypeId" nillable="true" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>Számlaértesítő tipusa</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Clauses" nillable="false" type="tns:ArrayOfClauseItem">
+            <xs:annotation>
+              <xs:documentation>Záradék lista</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConvertExternalInvoiceTransaction" nillable="false" type="tns:ConvertExternalInvoiceTransaction"/>
+
+  <xs:complexType name="ConvertExternalInvoiceTransactionResult">
+    <xs:annotation>
+      <xs:documentation>Számla aláírás tranzakció eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TransactionResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InvoiceCourierUrl" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Számla letöltés link</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConvertExternalInvoiceTransactionResult" nillable="false" type="tns:ConvertExternalInvoiceTransactionResult"/>
+
+  <xs:complexType name="CreateInvoiceTransaction">
+    <xs:annotation>
+      <xs:documentation>Számla létrehozás tranzakciója</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TransactionBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Header" nillable="false" type="tns:InvoiceHeaderBase">
+            <xs:annotation>
+              <xs:documentation>Számla fejadatai</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="Lines" nillable="false" type="tns:ArrayOfInvoiceLine">
+            <xs:annotation>
+              <xs:documentation>Számla tételei</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SendInvoiceToCustomer" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Az számlaértesítő kiküldése a vevőnek</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SendInvoiceToEmailAddress" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A vevő emailcíme, ahova az értesítőt küldeni kell</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceCourierTypeId" nillable="true" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>Számlaértesítő tipusa</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Clauses" nillable="false" type="tns:ArrayOfClauseItem">
+            <xs:annotation>
+              <xs:documentation>Záradék lista</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateInvoiceTransaction" nillable="false" type="tns:CreateInvoiceTransaction"/>
+
+  <xs:complexType name="CreateInvoiceTransactionResult">
+    <xs:annotation>
+      <xs:documentation>Számla létrehozás tranzakció eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TransactionResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A létrehozott számla száma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceCourierUrl" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Számla letöltés link</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateInvoiceTransactionResult" nillable="false" type="tns:CreateInvoiceTransactionResult"/>
+
+  <xs:complexType name="InvoiceHeader">
+    <xs:annotation>
+      <xs:documentation>Számla fejadatai</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InvoiceHeaderBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="AccountBlockPrefix" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Számlatömb jele</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="Bank" nillable="false" type="tns:BankBase">
+            <xs:annotation>
+              <xs:documentation>Banki adatok</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="IssuerAddress" nillable="false" type="tns:IssuerAddressBase">
+            <xs:annotation>
+              <xs:documentation>Telephely címe</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="Customer" nillable="false" type="tns:CustomerBase">
+            <xs:annotation>
+              <xs:documentation>Vevő adatai</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="FulfillmentDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Teljesítés ideje</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="PaymentDueDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Fizetési határidő</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="Currency" nillable="false" type="tns:CurrencyBase">
+            <xs:annotation>
+              <xs:documentation>Pénznem</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="InterEUVatExempt" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>EU-n belüli 0%-os ÁFÁs</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PaymentMethodId" nillable="true" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>Fizetési mód</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Számla megjegyzése</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Egyéb adatok</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="OrderNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Megrendelés száma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LocalForeignCurrencyExchangeRate" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Árfolyam</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsDomesticDelivery" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Beföldi teljesítés?</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsVatReasonAccepted" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>IsVatReasonAccepted</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceDocumentType" nillable="true" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>1 - Normál számla (default), 2 - Sztornó számla, 3 - Jóváíró számla, 4 - Módosító számla</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ReferenceInvoiceNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Hivatkozott számlasorszáma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ReferenceInvoiceFulfillmentDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Hivatkozott számla teljesítési ideje</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceHasElectronicServiceInEU" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Unión belüli elektronikus szolgáltatás</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ForceLocalForeignCurrencyExchangeRate" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Árfolyam megjelenítése</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvoiceHeader" nillable="false" type="tns:InvoiceHeader"/>
+
+  <xs:complexType name="InvoiceHeaderWithTotalAmount">
+    <xs:annotation>
+      <xs:documentation>Számla fejadatai minden adattal</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InvoiceHeader">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="InvoiceNumber" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Számla sorszáma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="InvoiceNetTotalAmount" nillable="false" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Nettó összeg</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="InvoiceVatTotalAmount" nillable="false" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>ÁFA összeg</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="InvoiceGrossTotalAmount" nillable="false" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Bruttó összeg</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceLocalVatTotalAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>ÁFA összeg a kiállító országa szerinti pénznemben</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceLocalGrossTotalAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Bruttó összeg a kiállító országa szerinti pénznemben</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceLocalNetTotalAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Nettó összeg a kiállító országa szerinti pénznemben</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvoiceHeaderWithTotalAmount" nillable="false" type="tns:InvoiceHeaderWithTotalAmount"/>
+
+  <xs:complexType name="NameValueItem">
+    <xs:annotation>
+      <xs:documentation>Name-value elem</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Name" nillable="false" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Az elem neve</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" name="Value" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Az elem értéke</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NameValueItem" nillable="false" type="tns:NameValueItem"/>
+
+  <xs:complexType name="ArrayOfNameValueItem">
+    <xs:annotation>
+      <xs:documentation>Name-value lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NameValueItem" nillable="false" type="tns:NameValueItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNameValueItem" nillable="false" type="tns:ArrayOfNameValueItem"/>
+
+  <xs:complexType name="InvoiceLineWithAmount">
+    <xs:annotation>
+      <xs:documentation>Számla tétel minden adattal</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InvoiceLine2">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="NetAmount" nillable="false" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Nettó érték</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="VatAmount" nillable="false" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>ÁFA érték</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="GrossAmount" nillable="false" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Bruttó érték</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvoiceLineWithAmount" nillable="false" type="tns:InvoiceLineWithAmount"/>
+
+  <xs:complexType name="ArrayOfInvoiceLine">
+    <xs:annotation>
+      <xs:documentation>Számla tétel lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="InvoiceLineBase" nillable="false" type="tns:InvoiceLineBase"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceLine" nillable="false" type="tns:ArrayOfInvoiceLine"/>
+
+  <xs:complexType name="ArrayOfInvoiceLineWithAmount">
+    <xs:annotation>
+      <xs:documentation>Számla tétel lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="InvoiceLineWithAmount" nillable="false" type="tns:InvoiceLineWithAmount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceLineWithAmount" nillable="false" type="tns:ArrayOfInvoiceLineWithAmount"/>
+
+  <xs:complexType name="ArrayOfInvoiceVatGroup">
+    <xs:annotation>
+      <xs:documentation>ÁFA csoportosító lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="InvoiceVatGroup" nillable="false" type="tns:InvoiceVatGroup"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceVatGroup" nillable="false" type="tns:ArrayOfInvoiceVatGroup"/>
+
+  <xs:complexType name="InvoiceVatGroup">
+    <xs:annotation>
+      <xs:documentation>ÁFA csoportosító elem</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="VatTaxRateCode" nillable="false" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ÁFA kulcs kódja (Lásd interfész dokumentáció)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" name="VatAmount" nillable="false" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>ÁFA érték</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" name="NetAmount" nillable="false" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Nettó érték</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" name="GrossAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Bruttó érték</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LocalVatAmount" nillable="true" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>ÁFA érték a kiállító országa szerinti pénznemben</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LocalGrossAmount" nillable="true" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Bruttó érték a kiállító országa szerinti pénznemben</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LocalNetAmount" nillable="true" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Nettó érték a kiállító országa szerinti pénznemben</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceVatGroup" nillable="false" type="tns:InvoiceVatGroup"/>
+
+  <xs:complexType name="InvoiceLine">
+    <xs:annotation>
+      <xs:documentation>Számla tétel</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InvoiceLineBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProductStatisticalCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>VTSZ / SZJ</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="ProductName" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Megnevezése</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NetUnitPrice" type="xs:decimal" nillable="true">
+            <xs:annotation>
+              <xs:documentation>Tétel nettó egységára</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="Quantity" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Mennyiség</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="VatPercentage" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>ÁFA kulcs</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="UnitIdentifier" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Mennyiségi egység azonosítója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ProductTextIdentifier" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A termék azonosítója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GrossUnitPrice" type="xs:decimal" nillable="true">
+            <xs:annotation>
+              <xs:documentation>Tétel bruttó egységára</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsPeriodic" type="xs:boolean" nillable="true">
+            <xs:annotation>
+              <xs:documentation>A számlatétel időszakra vonatkozik</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PeriodStartDate" type="xs:dateTime" nillable="true">
+            <xs:annotation>
+              <xs:documentation>Számlatételre vonatkozó időszak kezdete</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PeriodEndDate" type="xs:dateTime" nillable="true">
+            <xs:annotation>
+              <xs:documentation>Számlatételre vonatkozó időszak vége</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Clauses" nillable="false" type="tns:ArrayOfClauseItem">
+            <xs:annotation>
+              <xs:documentation>Záradék lista</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvoiceLine" nillable="false" type="tns:InvoiceLine"/>
+
+  <xs:complexType name="InvoiceLine2">
+    <xs:annotation>
+      <xs:documentation>Számla tétel</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InvoiceLineBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProductStatisticalCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>VTSZ / SZJ</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="ProductName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Megnevezése</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NetUnitPrice" type="xs:decimal" nillable="true">
+            <xs:annotation>
+              <xs:documentation>Tétel nettó egységára</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="Quantity" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Mennyiség</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="VatTaxRateCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>ÁFA kulcs kódja (Lásd interfész dokumentáció)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="UnitIdentifier" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Mennyiségi egység azonosítója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ProductTextIdentifier" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A termék azonosítója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceLineNote" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Megjegyzés</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GrossUnitPrice" type="xs:decimal" nillable="true">
+            <xs:annotation>
+              <xs:documentation>Tétel bruttó egységára</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsPeriodic" type="xs:boolean" nillable="true">
+            <xs:annotation>
+              <xs:documentation>A számlatétel időszakra vonatkozik</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PeriodStartDate" type="xs:dateTime" nillable="true">
+            <xs:annotation>
+              <xs:documentation>Számlatételre vonatkozó időszak kezdete</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PeriodEndDate" type="xs:dateTime" nillable="true">
+            <xs:annotation>
+              <xs:documentation>Számlatételre vonatkozó időszak vége</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Clauses" nillable="false" type="tns:ArrayOfClauseItem">
+            <xs:annotation>
+              <xs:documentation>Záradék lista</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvoiceLine2" nillable="false" type="tns:InvoiceLine2"/>
+
+  <xs:complexType name="InvoiceLineIdentifier">
+    <xs:annotation>
+      <xs:documentation>Termék meghatározása azonosítóval</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InvoiceLineBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Identifier" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A termék azonosítója</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="Quantity" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Mennyiség</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsPeriodic" type="xs:boolean" nillable="true">
+            <xs:annotation>
+              <xs:documentation>A számlatétel időszakra vonatkozik</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PeriodStartDate" type="xs:dateTime" nillable="true">
+            <xs:annotation>
+              <xs:documentation>Számlatételre vonatkozó időszak kezdete</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PeriodEndDate" type="xs:dateTime" nillable="true">
+            <xs:annotation>
+              <xs:documentation>Számlatételre vonatkozó időszak vége</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Clauses" nillable="false" type="tns:ArrayOfClauseItem">
+            <xs:annotation>
+              <xs:documentation>Záradék lista</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceLineNote" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Megjegyzés</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvoiceLineIdentifier" nillable="false" type="tns:InvoiceLineIdentifier"/>
+
+  <!-- Core osztályok -->
+  <xs:complexType name="InvoiceLineBase">
+    <xs:annotation>
+      <xs:documentation>InvoiceLine ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceLineBase" nillable="true" type="tns:InvoiceLineBase" />
+
+  <xs:complexType name="CurrencyBase">
+    <xs:annotation>
+      <xs:documentation>Currency ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurrencyBase" nillable="true" type="tns:CurrencyBase" />
+
+  <xs:complexType name="InvoiceHeaderBase">
+    <xs:annotation>
+      <xs:documentation>InvoiceHeader ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceHeaderBase" nillable="true" type="tns:InvoiceHeaderBase" />
+
+  <xs:complexType name="IssuerAddressBase">
+    <xs:annotation>
+      <xs:documentation>IssuerAddress ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IssuerAddressBase" nillable="true" type="tns:IssuerAddressBase" />
+
+  <xs:complexType name="TransactionBase">
+    <xs:annotation>
+      <xs:documentation>Transaction ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="TransactionId" nillable="false" type="xs:string"/>
+      <xs:element minOccurs="0" name="SourceSystem" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionBase" nillable="true" type="tns:TransactionBase" />
+
+  <xs:complexType name="QueryBase">
+    <xs:annotation>
+      <xs:documentation>Lekérdező ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryBase" nillable="true" type="tns:QueryBase" />
+
+  <xs:complexType name="CustomerBase">
+    <xs:annotation>
+      <xs:documentation>Customer ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerBase" nillable="true" type="tns:CustomerBase" />
+
+  <xs:complexType name="BankBase">
+    <xs:annotation>
+      <xs:documentation>Bank ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankBase" nillable="true" type="tns:BankBase" />
+
+  <xs:complexType name="TransactionResult">
+    <xs:annotation>
+      <xs:documentation>Tranzakció eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="TransactionId" nillable="false" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Tranzakció azonosítója</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" name="ResultCode" nillable="false" type="tns:ResultCode">
+        <xs:annotation>
+          <xs:documentation>Eredmény kód</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" name="RepeatedTransaction" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Ismételt tranzakció?</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionResult" nillable="false" type="tns:TransactionResult"/>
+
+  <xs:complexType name="QueryResultBase">
+    <xs:annotation>
+      <xs:documentation>Lekérdezés eredménye ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ResultCode" nillable="false" type="tns:ResultCode">
+        <xs:annotation>
+          <xs:documentation>Eredmény kód</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryResultBase" nillable="false" type="tns:QueryResultBase"/>
+
+  <xs:complexType name="ResultCode">
+    <xs:annotation>
+      <xs:documentation>Eredmény kód</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Code" nillable="false" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Kód</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" name="IsTransient" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Átmeneti hiba?</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultCode" nillable="true" type="tns:ResultCode" />
+
+  <xs:complexType name="ClauseItem">
+    <xs:annotation>
+      <xs:documentation>ClauseItem osztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Id" nillable="false" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Záradék azonosítója</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Parameters" nillable="false" type="tns:ArrayOfClauseParameterItem">
+        <xs:annotation>
+          <xs:documentation>Záradék paraméter lista</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClauseItem" nillable="true" type="tns:ClauseItem" />
+
+  <xs:complexType name="ArrayOfClauseItem">
+    <xs:annotation>
+      <xs:documentation>Záradék lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="ClauseItem" nillable="false" type="tns:ClauseItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClauseItem" nillable="false" type="tns:ArrayOfClauseItem"/>
+
+  <xs:complexType name="ArrayOfClauseParameterItem">
+    <xs:annotation>
+      <xs:documentation>Záradék paraméter lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="ClauseParameterItemBase" nillable="false" type="tns:ClauseParameterItemBase"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClauseParameterItem" nillable="false" type="tns:ArrayOfClauseParameterItem"/>
+
+  <xs:complexType name="ClauseParameterItemBase">
+    <xs:annotation>
+      <xs:documentation>ClauseParameterItem ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Name" nillable="false" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Paraméter neve</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClauseParameterItemBase" nillable="true" type="tns:ClauseParameterItemBase" />
+
+  <xs:complexType name="ClauseStringParameterItem">
+    <xs:annotation>
+      <xs:documentation>String típusú ClauseParameterItem</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ClauseParameterItemBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Value" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>String érték</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClauseStringParameterItem" nillable="false" type="tns:ClauseStringParameterItem"/>
+
+  <xs:complexType name="ClauseDateParameterItem">
+    <xs:annotation>
+      <xs:documentation>Date típusú ClauseParameterItem</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ClauseParameterItemBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Value" nillable="false" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>Date érték</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClauseDateParameterItem" nillable="false" type="tns:ClauseDateParameterItem"/>
+
+  <xs:complexType name="ClauseBoolParameterItem">
+    <xs:annotation>
+      <xs:documentation>Boolean típusú ClauseParameterItem</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ClauseParameterItemBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Value" nillable="false" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Boolean érték</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClauseBoolParameterItem" nillable="false" type="tns:ClauseBoolParameterItem"/>
+
+  <xs:complexType name="ClauseIntParameterItem">
+    <xs:annotation>
+      <xs:documentation>Integer típusú ClauseParameterItem</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ClauseParameterItemBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Value" nillable="false" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>Integer érték</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClauseIntParameterItem" nillable="false" type="tns:ClauseIntParameterItem"/>
+
+  <xs:complexType name="ClauseDecimalParameterItem">
+    <xs:annotation>
+      <xs:documentation>Decimal típusú ClauseParameterItem</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ClauseParameterItemBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Value" nillable="false" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Decimal érték</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClauseDecimalParameterItem" nillable="false" type="tns:ClauseDecimalParameterItem"/>
+
+  <!-- NYUGTA -->
+
+  <xs:complexType name="CreateCashReceiptTransaction">
+    <xs:annotation>
+      <xs:documentation>Nyugta létrehozás tranzakciója</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TransactionBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Payment" nillable="false" type="tns:PaymentBase">
+            <xs:annotation>
+              <xs:documentation>Befizetés adatai</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="CashReceiptHeader" nillable="false" type="tns:CashReceiptHeaderBase">
+            <xs:annotation>
+              <xs:documentation>Nyugta fejadatai</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <!--<xs:element minOccurs="1" name="CashReceiptLines" nillable="false" type="tns:ArrayOfCashReceiptLine">
+            <xs:annotation>
+              <xs:documentation>Nyugta tételei (nem használt)</xs:documentation>
+            </xs:annotation>
+          </xs:element>-->
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateCashReceiptTransaction" nillable="false" type="tns:CreateCashReceiptTransaction"/>
+
+  <xs:complexType name="CreateCashReceiptTransactionResult">
+    <xs:annotation>
+      <xs:documentation>Nyugta létrehozás tranzakció eredménye</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TransactionResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CashReceiptNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A létrehozott nyugta száma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateCashReceiptTransactionResult" nillable="false" type="tns:CreateCashReceiptTransactionResult"/>
+
+  <!-- Egyelőre nem használt
+  
+  <xs:complexType name="ArrayOfCashReceiptLine">
+    <xs:annotation>
+      <xs:documentation>Nyugta tétel lista</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="CashReceiptLineBase" nillable="false" type="tns:CashReceiptLineBase"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCashReceiptLine" nillable="false" type="tns:ArrayOfCashReceiptLine"/>
+
+  <xs:complexType name="CashReceiptLineBase">
+    <xs:annotation>
+      <xs:documentation>CashReceiptLine ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CashReceiptLineBase" nillable="true" type="tns:CashReceiptLineBase" />-->
+
+  <xs:complexType name="CashReceiptHeaderBase">
+    <xs:annotation>
+      <xs:documentation>CashReceiptHeader ősosztály</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CashReceiptHeaderBase" nillable="true" type="tns:CashReceiptHeaderBase" />
+
+  <xs:complexType name="PaymentBase">
+    <xs:annotation>
+      <xs:documentation>Payment ősosztály a befizetés adatinak</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentBase" nillable="true" type="tns:PaymentBase" />
+
+  <xs:complexType name="AllocatedPayment">
+    <xs:annotation>
+      <xs:documentation>Kiállított számlára vonatkozó befizetés adatai</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PaymentBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="InvoiceNumber" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Számla sorszáma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="PaymentDate" nillable="false" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>Befizetés dátuma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="BankIdentifier" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Fizetési mód (Pénztári befizetés engedélyezve)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Fizetési tranzakció megjegyzése</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AllocatedPayment" nillable="false" type="tns:AllocatedPayment"/>
+
+  <xs:complexType name="UnallocatedPayment">
+    <xs:annotation>
+      <xs:documentation>Eseti befizetés adatai</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PaymentBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="PaymentDate" nillable="false" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>Befizetés dátuma</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="PaymentTotal" nillable="false" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>Fizetett összeg</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="Currency" nillable="false" type="tns:CurrencyShortName">
+            <xs:annotation>
+              <xs:documentation>Pénznem</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="Customer" nillable="false" type="tns:CustomerIdentifier">
+            <xs:annotation>
+              <xs:documentation>Vevő adatai</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="BankIdentifier" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Fizetési mód (Pénztári befizetés engedélyezve)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Fizetési tranzakció megjegyzése</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnallocatedPayment" nillable="false" type="tns:UnallocatedPayment"/>
+
+  <xs:complexType name="CashReceiptHeader">
+    <xs:annotation>
+      <xs:documentation>Nyugta fejadatai</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CashReceiptHeaderBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="CreatorName" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Kiállító neve</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="CashierName" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Pénztáros neve</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="ContributorName" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Befizető neve</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="ContributorDocument" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Befizetőt azonosító okmányszám</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" name="CashReceiptBlockPrefix" nillable="false" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Nyugtatömb jele</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Mellékletek</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CashReceiptHeader" nillable="false" type="tns:CashReceiptHeader"/>
+
+
+</xs:schema>

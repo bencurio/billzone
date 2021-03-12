@@ -1,0 +1,5 @@
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\DomainModel\bin\Debug\DomainModel.dll
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\DomainModel\bin\Debug\DomainModel.pdb
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\DomainModel\obj\Debug\DomainModel.dll
+D:\Sources\OnlineSzamlazo\_docs\InterfaceSpecification\C#\DomainModel\obj\Debug\DomainModel.pdb

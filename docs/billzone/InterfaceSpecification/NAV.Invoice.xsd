@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VERSION: 1 -->
+<xs:schema xmlns:szla="http://www.apeh.hu/2005/szamla" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.apeh.hu/2005/szamla">
+  <xs:complexType name="szamlatipus">
+    <xs:sequence>
+      <xs:element ref="szla:fejlec"/>
+      <xs:element ref="szla:tetelek"/>
+      <xs:element ref="szla:osszesites"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fejlectipus">
+    <xs:sequence>
+      <xs:element ref="szla:elado"/>
+      <xs:element ref="szla:vevo"/>
+      <xs:element ref="szla:kepviselo" minOccurs="0"/>
+      <xs:element ref="szla:szamlainfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tetelektipus">
+    <xs:sequence>
+      <xs:element ref="szla:tetel"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="osszesitestipus">
+    <xs:sequence>
+      <xs:element ref="szla:afarovat" maxOccurs="unbounded"/>
+      <xs:element ref="szla:vegosszeg"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eladotipus">
+    <xs:sequence>
+      <xs:element ref="szla:nev"/>
+      <xs:element ref="szla:adoszam"/>
+      <xs:element ref="szla:csasz" minOccurs="0"/>
+      <xs:element ref="szla:cim"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="kepviselotipus">
+    <xs:sequence>
+      <xs:element ref="szla:nev"/>
+      <xs:element ref="szla:adoszam"/>
+      <xs:element ref="szla:csasz" minOccurs="0"/>
+      <xs:element ref="szla:cim"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vevotipus">
+    <xs:sequence>
+      <xs:element ref="szla:nev"/>
+      <xs:element ref="szla:adoszam" minOccurs="0"/>
+      <xs:element ref="szla:kozadoszam" minOccurs="0"/>
+      <xs:element ref="szla:csasz" minOccurs="0"/>
+      <xs:element ref="szla:cim"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="szamlainfotipus">
+    <xs:sequence>
+      <xs:element ref="szla:sorszam"/>
+      <xs:element ref="szla:kuladohiv" minOccurs="0"/>
+      <xs:element ref="szla:kialldatum"/>
+      <xs:element ref="szla:teljdatum"/>
+      <xs:element ref="szla:fizhatarido"/>
+      <xs:element ref="szla:fizmod"/>
+      <xs:element ref="szla:szamlatipusa"/>
+      <xs:element ref="szla:hivatkozottszamla" minOccurs="0"/>
+      <xs:element ref="szla:egyebadat" minOccurs="0"/>
+      <xs:element ref="szla:penznem"/>
+      <xs:element ref="szla:arfolyam" minOccurs="0"/>
+      <xs:element ref="szla:ftafaertek" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="teteltipus">
+    <xs:sequence>
+      <xs:element ref="szla:termeknev"/>
+      <xs:element ref="szla:besorszam" minOccurs="0"/>
+      <xs:element ref="szla:mennyegys" minOccurs="0"/>
+      <xs:element ref="szla:menny" minOccurs="0"/>
+      <xs:element ref="szla:nettoegysegar" minOccurs="0"/>
+      <xs:element ref="szla:bruttoegysegar" minOccurs="0"/>
+      <xs:element ref="szla:nettoar"/>
+      <xs:element ref="szla:afakulcs"/>
+      <xs:element ref="szla:afaertek"/>
+      <xs:element ref="szla:bruttoar"/>
+      <xs:element ref="szla:kozleszkinf" minOccurs="0" />
+      <xs:element ref="szla:engedmeny" minOccurs="0" />
+      <xs:element ref="szla:engedmenyszazalek" minOccurs="0" />
+      <xs:element ref="szla:megjegyzes" minOccurs="0" />
+      <xs:element ref="szla:idoszak" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="vegosszegtipus">
+    <xs:sequence>
+      <xs:element ref="szla:nettoarossz"/>
+      <xs:element ref="szla:afaertekossz"/>
+      <xs:element ref="szla:bruttoarossz"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="afarovattipus">
+    <xs:sequence>
+      <xs:element ref="szla:afakulcs"/>
+      <xs:element ref="szla:nettoar"/>
+      <xs:element ref="szla:afaertek"/>
+      <xs:element ref="szla:bruttoar"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="cimtipus">
+    <xs:sequence>
+      <xs:element ref="szla:orszag"/>
+      <xs:element ref="szla:telepules"/>
+      <xs:element ref="szla:irszam"/>
+      <xs:element ref="szla:kozternev"/>
+      <xs:element ref="szla:kozterjell"/>
+      <xs:element ref="szla:hazszam"/>
+      <xs:element ref="szla:epulet" minOccurs="0"/>
+      <xs:element ref="szla:lepcsohaz" minOccurs="0"/>
+      <xs:element ref="szla:emelet" minOccurs="0"/>
+      <xs:element ref="szla:ajto" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="kozleszkinftipus">
+    <xs:sequence>
+      <xs:element ref="szla:forgdatum"/>
+      <xs:choice>
+        <xs:element ref="szla:futottkm"/>
+        <xs:element ref="szla:repultora"/>
+        <xs:element ref="szla:hajozottora"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="szamla" type="szla:szamlatipus"/>
+  <xs:element name="fejlec" type="szla:fejlectipus"/>
+  <xs:element name="tetelek">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="szla:tetel" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="idoszak">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="szla:tol" minOccurs="1" maxOccurs="1" />
+        <xs:element ref="szla:ig" minOccurs="1" maxOccurs="1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="osszesites">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="szla:afarovat" maxOccurs="4"/>
+        <xs:element ref="szla:vegosszeg"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="elado" type="szla:eladotipus"/>
+  <xs:element name="kepviselo" type="szla:kepviselotipus"/>
+  <xs:element name="vevo" type="szla:vevotipus"/>
+  <xs:element name="szamlainfo" type="szla:szamlainfotipus"/>
+  <xs:element name="tetel" type="szla:teteltipus"/>
+  <xs:element name="afarovat" type="szla:afarovattipus"/>
+  <xs:element name="cim" type="szla:cimtipus"/>
+  <xs:element name="nev" type="xs:string"/>
+  <xs:element name="adoszam" type="xs:string"/>
+  <xs:element name="kozadoszam" type="xs:string"/>
+  <xs:element name="csasz" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Csoport Azonosító Szám</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="orszag" type="xs:string"/>
+  <xs:element name="telepules" type="xs:string"/>
+  <xs:element name="irszam" type="xs:string"/>
+  <xs:element name="kozternev" type="xs:string"/>
+  <xs:element name="kozterjell" type="xs:string"/>
+  <xs:element name="hazszam" type="xs:string"/>
+  <xs:element name="epulet" type="xs:string"/>
+  <xs:element name="lepcsohaz" type="xs:string"/>
+  <xs:element name="emelet" type="xs:string"/>
+  <xs:element name="sorszam" type="xs:string"/>
+  <xs:element name="kuladohiv" type="xs:boolean"/>
+  <xs:element name="kialldatum" type="xs:date"/>
+  <xs:element name="tol" type="xs:date"/>
+  <xs:element name="ig" type="xs:date"/>
+  <xs:element name="teljdatum" type="xs:date"/>
+  <xs:element name="fizhatarido" type="xs:date"/>
+  <xs:element name="fizmod" type="xs:string"/>
+  <xs:element name="termeknev" type="xs:string"/>
+  <xs:element name="besorszam" type="xs:string"/>
+  <xs:element name="mennyegys" type="xs:string"/>
+  <xs:element name="menny" type="xs:decimal"/>
+  <xs:element name="nettoegysegar" type="xs:decimal"/>
+  <xs:element name="bruttoegysegar" type="xs:decimal"/>
+  <xs:element name="nettoar" type="xs:decimal"/>
+  <xs:element name="bruttoar" type="xs:decimal"/>
+  <xs:element name="afakulcs" type="xs:string"/>
+  <xs:element name="afaertek" type="xs:decimal"/>
+  <xs:element name="engedmeny" type="xs:decimal">
+    <xs:annotation>
+      <xs:documentation>a tételhez tartozó engedmény összege</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="engedmenyszazalek" type="xs:decimal">
+    <xs:annotation>
+      <xs:documentation>a tételhez tartozó engedmény százalékos értéke</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="megjegyzes" type="xs:string"/>
+  <xs:element name="vegosszeg" type="szla:vegosszegtipus"/>
+  <xs:element name="afaertekossz" type="xs:decimal"/>
+  <xs:element name="nettoarossz" type="xs:decimal"/>
+  <xs:element name="bruttoarossz" type="xs:decimal"/>
+  <xs:element name="kozleszkinf" type="szla:kozleszkinftipus"/>
+  <xs:element name="forgdatum" type="xs:date"/>
+  <xs:element name="futottkm" type="xs:decimal"/>
+  <xs:element name="repultora" type="xs:decimal"/>
+  <xs:element name="hajozottora" type="xs:decimal"/>
+  <xs:element name="szamlatipusa" type="xs:string"/>
+  <xs:element name="hivatkozottszamla" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>jóváíró vagy sztornó számla esetén a hivatkozott számla sorszáma</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="penznem" type="xs:string"/>
+  <xs:element name="arfolyam" type="xs:decimal">
+    <xs:annotation>
+      <xs:documentation>devizás számla esetén a használt árfolyam értéke</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ftafaertek" type="xs:decimal">
+    <xs:annotation>
+      <xs:documentation>devizás számla esetén az ÁFA értéke átszámítva forintba</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="egyebadat" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>egyéb adatok, megjegyzések tárolására</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ajto" type="xs:string"/>
+</xs:schema>

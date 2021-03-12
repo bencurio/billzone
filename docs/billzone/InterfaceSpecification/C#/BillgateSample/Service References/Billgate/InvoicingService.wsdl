@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Billzone.Billgate.Invoicing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InvoicingService" targetNamespace="http://Billzone.Billgate.Invoicing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://Billzone.Billgate.Invoicing">
+      <xsd:element name="CreateInvoice">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q1="http://Billzone.Billgate.Invoicing.Messages" minOccurs="0" name="request" nillable="true" type="q1:CreateInvoiceRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateInvoiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q2="http://Billzone.Billgate.Invoicing.Messages" minOccurs="0" name="CreateInvoiceResult" nillable="true" type="q2:CreateInvoiceResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConvertExternalInvoice">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q3="http://Billzone.Billgate.Invoicing.Messages" minOccurs="0" name="request" nillable="true" type="q3:ConvertExternalInvoiceRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConvertExternalInvoiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q4="http://Billzone.Billgate.Invoicing.Messages" minOccurs="0" name="ConvertExternalInvoiceResult" nillable="true" type="q4:ConvertExternalInvoiceResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DownloadInvoice">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q5="http://Billzone.Billgate.Invoicing.Messages" minOccurs="0" name="request" nillable="true" type="q5:DownloadInvoiceRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DownloadInvoiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q6="http://Billzone.Billgate.Invoicing.Messages" minOccurs="0" name="DownloadInvoiceResult" nillable="true" type="q6:DownloadInvoiceResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DownloadInvoices">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q7="http://Billzone.Billgate.Invoicing.Messages" minOccurs="0" name="request" nillable="true" type="q7:DownloadInvoicesRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DownloadInvoicesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q8="http://Billzone.Billgate.Invoicing.Messages" minOccurs="0" name="DownloadInvoicesResult" nillable="true" type="q8:DownloadInvoicesResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetInvoiceData">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q9="http://Billzone.Billgate.Invoicing.Messages" minOccurs="0" name="request" nillable="true" type="q9:GetInvoiceDataRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetInvoiceDataResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q10="http://Billzone.Billgate.Invoicing.Messages" minOccurs="0" name="GetInvoiceDataResult" nillable="true" type="q10:GetInvoiceDataResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://Billzone.Billgate.Invoicing.Messages" elementFormDefault="qualified" targetNamespace="http://Billzone.Billgate.Invoicing.Messages">
+      <xsd:complexType name="CreateInvoiceRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:RequestBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q11="http://Billzone.Billgate.Invoicing.DataModel" name="CreateInvoiceTransaction" nillable="true" type="q11:CreateInvoiceTransaction">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CreateInvoiceRequest" nillable="true" type="tns:CreateInvoiceRequest" />
+      <xsd:complexType name="RequestBase">
+        <xsd:sequence>
+          <xsd:element name="RequestId" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="SecurityToken" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="RequestBase" nillable="true" type="tns:RequestBase" />
+      <xsd:complexType name="ConvertExternalInvoiceRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:RequestBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q12="http://Billzone.Billgate.Invoicing.DataModel" name="ConvertExternalInvoiceTransaction" nillable="true" type="q12:ConvertExternalInvoiceTransaction">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ConvertExternalInvoiceRequest" nillable="true" type="tns:ConvertExternalInvoiceRequest" />
+      <xsd:complexType name="DownloadInvoiceRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:RequestBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q13="http://Billzone.Billgate.Invoicing.DataModel" name="DownloadInvoiceQuery" nillable="true" type="q13:DownloadInvoiceQuery">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DownloadInvoiceRequest" nillable="true" type="tns:DownloadInvoiceRequest" />
+      <xsd:complexType name="DownloadInvoicesRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:RequestBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q14="http://Billzone.Billgate.Invoicing.DataModel" name="DownloadInvoicesQuery" nillable="true" type="q14:DownloadInvoicesQuery">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DownloadInvoicesRequest" nillable="true" type="tns:DownloadInvoicesRequest" />
+      <xsd:complexType name="GetInvoiceDataRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:RequestBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q15="http://Billzone.Billgate.Invoicing.DataModel" name="GetInvoiceDataQuery" nillable="true" type="q15:GetInvoiceDataQuery">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="GetInvoiceDataRequest" nillable="true" type="tns:GetInvoiceDataRequest" />
+      <xsd:complexType name="CreateInvoiceResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ResponseBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q16="http://Billzone.Billgate.Invoicing.DataModel" minOccurs="0" name="TransactionResult" nillable="true" type="q16:CreateInvoiceTransactionResult" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CreateInvoiceResponse" nillable="true" type="tns:CreateInvoiceResponse" />
+      <xsd:complexType name="ResponseBase">
+        <xsd:sequence>
+          <xsd:element name="RequestId" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q17="http://Billzone.Billgate.Invoicing.DataModel" name="RequestResult" nillable="true" type="q17:ResultCode">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+      <xsd:complexType name="ConvertExternalInvoiceResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ResponseBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q18="http://Billzone.Billgate.Invoicing.DataModel" minOccurs="0" name="TransactionResult" nillable="true" type="q18:ConvertExternalInvoiceTransactionResult" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ConvertExternalInvoiceResponse" nillable="true" type="tns:ConvertExternalInvoiceResponse" />
+      <xsd:complexType name="DownloadInvoiceResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ResponseBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q19="http://Billzone.Billgate.Invoicing.DataModel" minOccurs="0" name="QueryResult" nillable="true" type="q19:DownloadInvoiceQueryResult" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DownloadInvoiceResponse" nillable="true" type="tns:DownloadInvoiceResponse" />
+      <xsd:complexType name="DownloadInvoicesResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ResponseBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q20="http://Billzone.Billgate.Invoicing.DataModel" minOccurs="0" name="QueryResult" nillable="true" type="q20:DownloadInvoicesQueryResult" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DownloadInvoicesResponse" nillable="true" type="tns:DownloadInvoicesResponse" />
+      <xsd:complexType name="GetInvoiceDataResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ResponseBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q21="http://Billzone.Billgate.Invoicing.DataModel" minOccurs="0" name="QueryResult" nillable="true" type="q21:GetInvoiceDataQueryResult" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="GetInvoiceDataResponse" nillable="true" type="tns:GetInvoiceDataResponse" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://Billzone.Billgate.Invoicing.DataModel" elementFormDefault="qualified" targetNamespace="http://Billzone.Billgate.Invoicing.DataModel">
+      <xsd:complexType name="ConvertExternalInvoiceTransaction">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:TransactionBase">
+            <xsd:sequence>
+              <xsd:element name="Header" nillable="true" type="tns:InvoiceHeaderWithTotalAmount">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="Lines" nillable="true" type="tns:ArrayOfInvoiceLineWithAmount">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="VatGroups" nillable="true" type="tns:ArrayOfInvoiceVatGroup">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="SendInvoiceToCustomer" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="SendInvoiceToEmailAddress" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="InvoiceCourierTypeId" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="Clauses" nillable="true" type="tns:ArrayOfClauseItem">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ConvertExternalInvoiceTransaction" nillable="true" type="tns:ConvertExternalInvoiceTransaction" />
+      <xsd:complexType name="TransactionBase">
+        <xsd:sequence>
+          <xsd:element name="TransactionId" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="TransactionBase" nillable="true" type="tns:TransactionBase" />
+      <xsd:complexType name="CreateInvoiceTransaction">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:TransactionBase">
+            <xsd:sequence>
+              <xsd:element name="Header" nillable="true" type="tns:InvoiceHeaderBase">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="Lines" nillable="true" type="tns:ArrayOfInvoiceLine">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="SendInvoiceToCustomer" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="SendInvoiceToEmailAddress" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="InvoiceCourierTypeId" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="Clauses" nillable="true" type="tns:ArrayOfClauseItem">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CreateInvoiceTransaction" nillable="true" type="tns:CreateInvoiceTransaction" />
+      <xsd:complexType name="InvoiceHeaderBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="InvoiceHeaderBase" nillable="true" type="tns:InvoiceHeaderBase" />
+      <xsd:complexType name="InvoiceHeader">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:InvoiceHeaderBase">
+            <xsd:sequence>
+              <xsd:element name="AccountBlockPrefix" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="Bank" nillable="true" type="tns:BankBase">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="IssuerAddress" nillable="true" type="tns:IssuerAddressBase">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="Customer" nillable="true" type="tns:CustomerBase">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="FulfillmentDate" type="xsd:dateTime" />
+              <xsd:element name="PaymentDueDate" type="xsd:dateTime" />
+              <xsd:element name="Currency" nillable="true" type="tns:CurrencyBase">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="InterEUVatExempt" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="PaymentMethodId" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="InvoiceDescription" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Notes" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="OrderNumber" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="LocalForeignCurrencyExchangeRate" nillable="true" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="IsDomesticDelivery" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="IsVatReasonAccepted" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="InvoiceDocumentType" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="ReferenceInvoiceNumber" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ReferenceInvoiceFulfillmentDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="InvoiceHasElectronicServiceInEU" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ForceLocalForeignCurrencyExchangeRate" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InvoiceHeader" nillable="true" type="tns:InvoiceHeader" />
+      <xsd:complexType name="BankBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="BankBase" nillable="true" type="tns:BankBase" />
+      <xsd:complexType name="DefaultBank">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:BankBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="BankDescription" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DefaultBank" nillable="true" type="tns:DefaultBank" />
+      <xsd:complexType name="BankIdentifier">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:BankBase">
+            <xsd:sequence>
+              <xsd:element name="Identifier" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="BankDescription" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="BankIdentifier" nillable="true" type="tns:BankIdentifier" />
+      <xsd:complexType name="IssuerAddressBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="IssuerAddressBase" nillable="true" type="tns:IssuerAddressBase" />
+      <xsd:complexType name="IssuerAddressIdentifier">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:IssuerAddressBase">
+            <xsd:sequence>
+              <xsd:element name="Identifier" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="IssuerAddressIdentifier" nillable="true" type="tns:IssuerAddressIdentifier" />
+      <xsd:complexType name="DefaultIssuerAddress">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:IssuerAddressBase">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DefaultIssuerAddress" nillable="true" type="tns:DefaultIssuerAddress" />
+      <xsd:complexType name="CustomerBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="CustomerBase" nillable="true" type="tns:CustomerBase" />
+      <xsd:complexType name="Customer">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:CustomerBase">
+            <xsd:sequence>
+              <xsd:element name="Name" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="CustomerIdentifier" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="EUTaxNumber" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="TaxNumber" nillable="true" type="xsd:string" />
+              <xsd:element name="AddressPostalCode" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="AddressCity" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="AddressCountryId" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="AddressLine1" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="AddressLine2" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="AddressState" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="GroupIdentificationNumber" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="Customer" nillable="true" type="tns:Customer" />
+      <xsd:complexType name="CustomerIdentifier">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:CustomerBase">
+            <xsd:sequence>
+              <xsd:element name="Identifier" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CustomerIdentifier" nillable="true" type="tns:CustomerIdentifier" />
+      <xsd:complexType name="CurrencyBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="CurrencyBase" nillable="true" type="tns:CurrencyBase" />
+      <xsd:complexType name="DefaultCurrency">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:CurrencyBase">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DefaultCurrency" nillable="true" type="tns:DefaultCurrency" />
+      <xsd:complexType name="CurrencyShortName">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:CurrencyBase">
+            <xsd:sequence>
+              <xsd:element name="ShortName" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CurrencyShortName" nillable="true" type="tns:CurrencyShortName" />
+      <xsd:complexType name="InvoiceHeaderWithTotalAmount">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:InvoiceHeader">
+            <xsd:sequence>
+              <xsd:element name="InvoiceNumber" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="InvoiceNetTotalAmount" type="xsd:decimal" />
+              <xsd:element name="InvoiceVatTotalAmount" type="xsd:decimal" />
+              <xsd:element name="InvoiceGrossTotalAmount" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="InvoiceLocalVatTotalAmount" nillable="true" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="InvoiceLocalGrossTotalAmount" nillable="true" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="InvoiceLocalNetTotalAmount" nillable="true" type="xsd:decimal" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InvoiceHeaderWithTotalAmount" nillable="true" type="tns:InvoiceHeaderWithTotalAmount" />
+      <xsd:complexType name="ArrayOfInvoiceLine">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="InvoiceLineBase" nillable="true" type="tns:InvoiceLineBase" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfInvoiceLine" nillable="true" type="tns:ArrayOfInvoiceLine" />
+      <xsd:complexType name="InvoiceLineBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="InvoiceLineBase" nillable="true" type="tns:InvoiceLineBase" />
+      <xsd:complexType name="InvoiceLine">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:InvoiceLineBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ProductStatisticalCode" nillable="true" type="xsd:string" />
+              <xsd:element name="ProductName" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="NetUnitPrice" nillable="true" type="xsd:decimal" />
+              <xsd:element name="Quantity" type="xsd:decimal" />
+              <xsd:element name="VatPercentage" type="xsd:decimal" />
+              <xsd:element name="UnitIdentifier" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="ProductTextIdentifier" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="GrossUnitPrice" nillable="true" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="IsPeriodic" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="PeriodStartDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="PeriodEndDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="Clauses" nillable="true" type="tns:ArrayOfClauseItem">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InvoiceLine" nillable="true" type="tns:InvoiceLine" />
+      <xsd:complexType name="ArrayOfClauseItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ClauseItem" nillable="true" type="tns:ClauseItem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfClauseItem" nillable="true" type="tns:ArrayOfClauseItem" />
+      <xsd:complexType name="ClauseItem">
+        <xsd:sequence>
+          <xsd:element name="Id" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfClauseParameterItem">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ClauseItem" nillable="true" type="tns:ClauseItem" />
+      <xsd:complexType name="ArrayOfClauseParameterItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ClauseParameterItemBase" nillable="true" type="tns:ClauseParameterItemBase" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfClauseParameterItem" nillable="true" type="tns:ArrayOfClauseParameterItem" />
+      <xsd:complexType name="ClauseParameterItemBase">
+        <xsd:sequence>
+          <xsd:element name="Name" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ClauseParameterItemBase" nillable="true" type="tns:ClauseParameterItemBase" />
+      <xsd:complexType name="ClauseStringParameterItem">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ClauseParameterItemBase">
+            <xsd:sequence>
+              <xsd:element name="Value" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ClauseStringParameterItem" nillable="true" type="tns:ClauseStringParameterItem" />
+      <xsd:complexType name="ClauseDateParameterItem">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ClauseParameterItemBase">
+            <xsd:sequence>
+              <xsd:element name="Value" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ClauseDateParameterItem" nillable="true" type="tns:ClauseDateParameterItem" />
+      <xsd:complexType name="ClauseBoolParameterItem">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ClauseParameterItemBase">
+            <xsd:sequence>
+              <xsd:element name="Value" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ClauseBoolParameterItem" nillable="true" type="tns:ClauseBoolParameterItem" />
+      <xsd:complexType name="ClauseIntParameterItem">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ClauseParameterItemBase">
+            <xsd:sequence>
+              <xsd:element name="Value" type="xsd:long" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ClauseIntParameterItem" nillable="true" type="tns:ClauseIntParameterItem" />
+      <xsd:complexType name="ClauseDecimalParameterItem">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ClauseParameterItemBase">
+            <xsd:sequence>
+              <xsd:element name="Value" type="xsd:decimal" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ClauseDecimalParameterItem" nillable="true" type="tns:ClauseDecimalParameterItem" />
+      <xsd:complexType name="InvoiceLine2">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:InvoiceLineBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ProductStatisticalCode" nillable="true" type="xsd:string" />
+              <xsd:element name="ProductName" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="NetUnitPrice" nillable="true" type="xsd:decimal" />
+              <xsd:element name="Quantity" type="xsd:decimal" />
+              <xsd:element name="VatTaxRateCode" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="UnitIdentifier" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" name="ProductTextIdentifier" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="InvoiceLineNote" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="GrossUnitPrice" nillable="true" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="IsPeriodic" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="PeriodStartDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="PeriodEndDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="Clauses" nillable="true" type="tns:ArrayOfClauseItem">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InvoiceLine2" nillable="true" type="tns:InvoiceLine2" />
+      <xsd:complexType name="InvoiceLineWithAmount">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:InvoiceLine2">
+            <xsd:sequence>
+              <xsd:element name="NetAmount" type="xsd:decimal" />
+              <xsd:element name="VatAmount" type="xsd:decimal" />
+              <xsd:element name="GrossAmount" type="xsd:decimal" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InvoiceLineWithAmount" nillable="true" type="tns:InvoiceLineWithAmount" />
+      <xsd:complexType name="InvoiceLineIdentifier">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:InvoiceLineBase">
+            <xsd:sequence>
+              <xsd:element name="Identifier" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="Quantity" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="IsPeriodic" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="PeriodStartDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="PeriodEndDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="Clauses" nillable="true" type="tns:ArrayOfClauseItem">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InvoiceLineIdentifier" nillable="true" type="tns:InvoiceLineIdentifier" />
+      <xsd:complexType name="ArrayOfInvoiceLineWithAmount">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="InvoiceLineWithAmount" nillable="true" type="tns:InvoiceLineWithAmount" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfInvoiceLineWithAmount" nillable="true" type="tns:ArrayOfInvoiceLineWithAmount" />
+      <xsd:complexType name="ArrayOfInvoiceVatGroup">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="InvoiceVatGroup" nillable="true" type="tns:InvoiceVatGroup" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfInvoiceVatGroup" nillable="true" type="tns:ArrayOfInvoiceVatGroup" />
+      <xsd:complexType name="InvoiceVatGroup">
+        <xsd:sequence>
+          <xsd:element name="VatTaxRateCode" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="VatAmount" type="xsd:decimal" />
+          <xsd:element name="NetAmount" type="xsd:decimal" />
+          <xsd:element name="GrossAmount" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="LocalVatAmount" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="LocalGrossAmount" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="LocalNetAmount" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="InvoiceVatGroup" nillable="true" type="tns:InvoiceVatGroup" />
+      <xsd:complexType name="DownloadInvoiceQuery">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:QueryBase">
+            <xsd:sequence>
+              <xsd:element name="InvoiceNumber" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DownloadInvoiceQuery" nillable="true" type="tns:DownloadInvoiceQuery" />
+      <xsd:complexType name="QueryBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="QueryBase" nillable="true" type="tns:QueryBase" />
+      <xsd:complexType name="DownloadInvoicesQuery">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:QueryBase">
+            <xsd:sequence>
+              <xsd:element name="CompressResult" type="xsd:boolean" />
+              <xsd:element name="FilterSpecification" nillable="true" type="tns:DownloadInvoicesFilterBase">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DownloadInvoicesQuery" nillable="true" type="tns:DownloadInvoicesQuery" />
+      <xsd:complexType name="DownloadInvoicesFilterBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="DownloadInvoicesFilterBase" nillable="true" type="tns:DownloadInvoicesFilterBase" />
+      <xsd:complexType name="DownloadInvoicesPeriodFilter">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:DownloadInvoicesFilterBase">
+            <xsd:sequence>
+              <xsd:element name="PeriodStart" type="xsd:dateTime" />
+              <xsd:element name="PeriodEnd" type="xsd:dateTime" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DownloadInvoicesPeriodFilter" nillable="true" type="tns:DownloadInvoicesPeriodFilter" />
+      <xsd:complexType name="GetInvoiceDataQuery">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:QueryBase">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="GetInvoiceDataQuery" nillable="true" type="tns:GetInvoiceDataQuery" />
+      <xsd:complexType name="ResultCode">
+        <xsd:sequence>
+          <xsd:element name="Code" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="IsTransient" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ResultCode" nillable="true" type="tns:ResultCode" />
+      <xsd:complexType name="ConvertExternalInvoiceTransactionResult">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:TransactionResult">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="InvoiceCourierUrl" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ConvertExternalInvoiceTransactionResult" nillable="true" type="tns:ConvertExternalInvoiceTransactionResult" />
+      <xsd:complexType name="TransactionResult">
+        <xsd:sequence>
+          <xsd:element name="TransactionId" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ResultCode" nillable="true" type="tns:ResultCode">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="RepeatedTransaction" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="TransactionResult" nillable="true" type="tns:TransactionResult" />
+      <xsd:complexType name="CreateInvoiceTransactionResult">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:TransactionResult">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="InvoiceCourierUrl" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CreateInvoiceTransactionResult" nillable="true" type="tns:CreateInvoiceTransactionResult" />
+      <xsd:complexType name="DownloadInvoiceQueryResult">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:QueryResultBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="InvoiceDocument" nillable="true" type="xsd:base64Binary" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DownloadInvoiceQueryResult" nillable="true" type="tns:DownloadInvoiceQueryResult" />
+      <xsd:complexType name="QueryResultBase">
+        <xsd:sequence>
+          <xsd:element name="ResultCode" nillable="true" type="tns:ResultCode">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="QueryResultBase" nillable="true" type="tns:QueryResultBase" />
+      <xsd:complexType name="GetInvoiceDataQueryResult">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:QueryResultBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Units" nillable="true" type="tns:ArrayOfUnitsQueryResultItem" />
+              <xsd:element minOccurs="0" name="AccountBlocks" nillable="true" type="tns:ArrayOfAccountBlocksQueryResultItem" />
+              <xsd:element minOccurs="0" name="PaymentMethods" nillable="true" type="tns:ArrayOfPaymentMethodsQueryResultItem" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="GetInvoiceDataQueryResult" nillable="true" type="tns:GetInvoiceDataQueryResult" />
+      <xsd:complexType name="ArrayOfUnitsQueryResultItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="UnitsQueryResultItem" nillable="true" type="tns:UnitsQueryResultItem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfUnitsQueryResultItem" nillable="true" type="tns:ArrayOfUnitsQueryResultItem" />
+      <xsd:complexType name="UnitsQueryResultItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="UnitIdentifier" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="UnitsQueryResultItem" nillable="true" type="tns:UnitsQueryResultItem" />
+      <xsd:complexType name="ArrayOfAccountBlocksQueryResultItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="AccountBlocksQueryResultItem" nillable="true" type="tns:AccountBlocksQueryResultItem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfAccountBlocksQueryResultItem" nillable="true" type="tns:ArrayOfAccountBlocksQueryResultItem" />
+      <xsd:complexType name="AccountBlocksQueryResultItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AccountBlockPrefix" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CurrencyShortName" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AccountBlocksQueryResultItem" nillable="true" type="tns:AccountBlocksQueryResultItem" />
+      <xsd:complexType name="ArrayOfPaymentMethodsQueryResultItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PaymentMethodsQueryResultItem" nillable="true" type="tns:PaymentMethodsQueryResultItem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfPaymentMethodsQueryResultItem" nillable="true" type="tns:ArrayOfPaymentMethodsQueryResultItem" />
+      <xsd:complexType name="PaymentMethodsQueryResultItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="BankIdentifier" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="PaymentMeansType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="BankAccountNumber" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="PaymentMethodsQueryResultItem" nillable="true" type="tns:PaymentMethodsQueryResultItem" />
+      <xsd:complexType name="DownloadInvoicesQueryResult">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:QueryResultBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Invoices" nillable="true" type="tns:ArrayOfDownloadInvoicesQueryResultItem" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="DownloadInvoicesQueryResult" nillable="true" type="tns:DownloadInvoicesQueryResult" />
+      <xsd:complexType name="ArrayOfDownloadInvoicesQueryResultItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="DownloadInvoicesQueryResultItem" nillable="true" type="tns:DownloadInvoicesQueryResultItem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfDownloadInvoicesQueryResultItem" nillable="true" type="tns:ArrayOfDownloadInvoicesQueryResultItem" />
+      <xsd:complexType name="DownloadInvoicesQueryResultItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="InvoiceDocument" nillable="true" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DownloadInvoicesQueryResultItem" nillable="true" type="tns:DownloadInvoicesQueryResultItem" />
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IInvoicing_CreateInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_CreateInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_ConvertExternalInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertExternalInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_ConvertExternalInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertExternalInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_DownloadInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_DownloadInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_DownloadInvoices_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadInvoices" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_DownloadInvoices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_GetInvoiceData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceData" />
+  </wsdl:message>
+  <wsdl:message name="IInvoicing_GetInvoiceData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInvoicing">
+    <wsdl:operation name="CreateInvoice">
+      <wsdl:input wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/CreateInvoice" message="tns:IInvoicing_CreateInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/CreateInvoiceResponse" message="tns:IInvoicing_CreateInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertExternalInvoice">
+      <wsdl:input wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/ConvertExternalInvoice" message="tns:IInvoicing_ConvertExternalInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/ConvertExternalInvoiceResponse" message="tns:IInvoicing_ConvertExternalInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoice">
+      <wsdl:input wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoice" message="tns:IInvoicing_DownloadInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoiceResponse" message="tns:IInvoicing_DownloadInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoices">
+      <wsdl:input wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoices" message="tns:IInvoicing_DownloadInvoices_InputMessage" />
+      <wsdl:output wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoicesResponse" message="tns:IInvoicing_DownloadInvoices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceData">
+      <wsdl:input wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/GetInvoiceData" message="tns:IInvoicing_GetInvoiceData_InputMessage" />
+      <wsdl:output wsaw:Action="http://Billzone.Billgate.Invoicing/IInvoicing/GetInvoiceDataResponse" message="tns:IInvoicing_GetInvoiceData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BillgateInvoicingServiceHttpEndpoint" type="tns:IInvoicing">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateInvoice">
+      <soap:operation soapAction="http://Billzone.Billgate.Invoicing/IInvoicing/CreateInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertExternalInvoice">
+      <soap:operation soapAction="http://Billzone.Billgate.Invoicing/IInvoicing/ConvertExternalInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoice">
+      <soap:operation soapAction="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoices">
+      <soap:operation soapAction="http://Billzone.Billgate.Invoicing/IInvoicing/DownloadInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceData">
+      <soap:operation soapAction="http://Billzone.Billgate.Invoicing/IInvoicing/GetInvoiceData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InvoicingService">
+    <wsdl:port name="BillgateInvoicingServiceHttpEndpoint" binding="tns:BillgateInvoicingServiceHttpEndpoint">
+      <soap:address location="https://sandbox.billzone.eu/Billgate" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

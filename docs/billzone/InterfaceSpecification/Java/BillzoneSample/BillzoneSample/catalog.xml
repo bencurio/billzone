@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/D:/Java/Billzone/WSDL/Billzone.Billgate.Invoicing.wsdl" uri="xml-resources/web-service-references/Billzone.Billgate.Invoicing/wsdl/Billzone.Billgate.Invoicing.wsdl"/>
+    <system systemId="file:/D:/Java/Billzone/WSDL/Billzone.Billgate.Invoicing.Parameters.xsd" uri="xml-resources/web-service-references/Billzone.Billgate.Invoicing/wsdl/Billzone.Billgate.Invoicing.Parameters.xsd"/>
+    <system systemId="file:/D:/Java/Billzone/WSDL/Billzone.Billgate.Invoicing.Messages.xsd" uri="xml-resources/web-service-references/Billzone.Billgate.Invoicing/wsdl/Billzone.Billgate.Invoicing.Messages.xsd"/>
+    <system systemId="file:/D:/Java/Billzone/WSDL/Billzone.Billgate.Invoicing.DataModel.xsd" uri="xml-resources/web-service-references/Billzone.Billgate.Invoicing/wsdl/Billzone.Billgate.Invoicing.DataModel.xsd"/>
+    <system systemId="file:/D:/Sources/OnlineSzamlazo/_docs/InterfaceSpecification/Java/BillzoneSample/wsdl/Billzone.Billgate.Invoicing.wsdl" uri="xml-resources/web-service-references/Billzone.Billgate.Invoicing/wsdl/Billzone.Billgate.Invoicing.wsdl"/>
+    <system systemId="file:/D:/Sources/OnlineSzamlazo/_docs/InterfaceSpecification/Java/BillzoneSample/wsdl/Billzone.Billgate.Invoicing.Parameters.xsd" uri="xml-resources/web-service-references/Billzone.Billgate.Invoicing/wsdl/Billzone.Billgate.Invoicing.Parameters.xsd"/>
+    <system systemId="file:/D:/Sources/OnlineSzamlazo/_docs/InterfaceSpecification/Java/BillzoneSample/wsdl/Billzone.Billgate.Invoicing.Messages.xsd" uri="xml-resources/web-service-references/Billzone.Billgate.Invoicing/wsdl/Billzone.Billgate.Invoicing.Messages.xsd"/>
+    <system systemId="file:/D:/Sources/OnlineSzamlazo/_docs/InterfaceSpecification/Java/BillzoneSample/wsdl/Billzone.Billgate.Invoicing.DataModel.xsd" uri="xml-resources/web-service-references/Billzone.Billgate.Invoicing/wsdl/Billzone.Billgate.Invoicing.DataModel.xsd"/>
+    <system systemId="https://sandbox.billzone.eu/billgate?wsdl" uri="xml-resources/web-service-references/billgate/wsdl/sandbox.billzone.eu/billgate.wsdl"/>
+</catalog>
